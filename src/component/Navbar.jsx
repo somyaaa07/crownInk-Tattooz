@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Artists", href: "#artists" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -28,25 +28,20 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 w-full z-50  ${
           scrolled
-            ? "bg-[#1c1c1c]/95 backdrop-blur-md border-b border-[#f5f5f5]/10 py-3"
+            ? "bg-[#1c1c1c]/95 backdrop-blur-lg border-b border-[#f5f5f5]/10 py-3"
             : "bg-transparent py-6"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-12 flex items-center justify-between h-15">
           {/* Logo */}
           <motion.a
             href="#home"
             className="flex flex-col leading-none"
             whileHover={{ opacity: 0.8 }}
           >
-            <span className="font-['Bebas_Neue'] text-[#f5f5f5] text-2xl font-light  tracking-widest">
-              Crown Ink
-            </span>
-            <span className="font-['Jost'] text-[#f5f5f5]/40 text-[9px] tracking-[0.4em] uppercase">
-              Tattoo Studio
-            </span>
+          <img src="/logo1.png" alt="logo-image" className="h-25 w-25 object-cover"/>
           </motion.a>
 
           {/* Desktop Links */}

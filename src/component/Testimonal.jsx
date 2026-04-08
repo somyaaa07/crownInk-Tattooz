@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -11,6 +11,8 @@ const testimonials = [
     author: "Rahul Sharma",
     location: "Delhi",
     stars: 5,
+    image: "https://picsum.photos/seed/rahul-tattoo-client/600/800.jpg",
+    tag: "Blackwork Sleeve",
   },
   {
     quote:
@@ -18,13 +20,17 @@ const testimonials = [
     author: "Sneha Kapoor",
     location: "Mumbai",
     stars: 5,
+    image: "https://picsum.photos/seed/sneha-fine-line/600/800.jpg",
+    tag: "Fine-Line Floral",
   },
   {
     quote:
-      "Rohan's Japanese sleeve is a true masterpiece. Three sessions of absolute artistry. Inkwell is the only studio I'll ever trust.",
+      "Rohan's Japanese sleeve is a true masterpiece. Three sessions of absolute artistry. crowninkwell is the only studio I'll ever trust.",
     author: "Dev Malhotra",
     location: "Bangalore",
     stars: 5,
+    image: "https://picsum.photos/seed/dev-japanese-sleeve/600/800.jpg",
+    tag: "Japanese Sleeve",
   },
 ];
 
@@ -33,87 +39,213 @@ export default function Testimonials() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [current, setCurrent] = useState(0);
 
-  const prev = () => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
-  const next = () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
+  const prev = () =>
+    setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
+  const next = () =>
+    setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
 
   return (
-    <section ref={ref} className="bg-[#161616] py-32 px-6 overflow-hidden">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          className="flex items-center gap-4 mb-16"
-        >
-          <div className="h-px w-10 bg-[#f5f5f5]/30" />
-          <span className="font-['Jost'] text-[#f5f5f5]/40 text-[10px] tracking-[0.5em] uppercase">
-            Client Stories
-          </span>
-        </motion.div>
+    <section ref={ref} className="bg-[#0e0e0e] py-28 lg:py-40 px-6 overflow-hidden relative">
+      {/* Subtle grain texture overlay */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: "repeat",
+          backgroundSize: "128px 128px",
+        }}
+      />
 
-        <div className="relative">
-          {/* Large quote mark */}
-          <div className="absolute -top-8 -left-4 font-['Cormorant_Garamond'] text-[#f5f5f5]/[0.06] text-[10rem] leading-none select-none pointer-events-none">
-            "
+      {/* Top decorative line */}
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16 lg:mb-24"
+        >
+          <div>
+            <div className="flex items-center gap-4 mb-5">
+              <div className="h-px w-10 bg-[#f5f5f5]/30" />
+              <span className="font-['DM_Sans'] text-[#f5f5f5]/40 text-[10px] tracking-[0.5em] uppercase">
+                Client Stories
+              </span>
+            </div>
+            <h2 className="font-['Bebas_Neue'] text-[#f5f5f5] text-5xl lg:text-7xl tracking-wide leading-[0.95]">
+              Words That<br />
+              <span className="text-[#f5f5f5]/30">Stay Etched</span>
+            </h2>
           </div>
 
-          <motion.div
-            key={current}
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="flex gap-1 mb-8">
-              {Array.from({ length: testimonials[current].stars }).map((_, i) => (
-                <Star key={i} size={14} className="text-[#f5f5f5]/40 fill-[#f5f5f5]/40" />
-              ))}
-            </div>
+          {/* Counter */}
+          <div className="font-['Jost'] text-[#f5f5f5]/20 text-sm tracking-[0.2em] tabular-nums">
+            {String(current + 1).padStart(2, "0")} /{" "}
+            {String(testimonials.length).padStart(2, "0")}
+          </div>
+        </motion.div>
 
-            <blockquote className="font-['Cormorant_Garamond'] text-[#f5f5f5] text-3xl lg:text-4xl font-light italic leading-relaxed mb-10">
-              "{testimonials[current].quote}"
-            </blockquote>
-
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-px bg-[#f5f5f5]/20" />
-              <div>
-                <p className="font-['Jost'] text-[#f5f5f5] text-sm tracking-wide">
-                  {testimonials[current].author}
-                </p>
-                <p className="font-['Jost'] text-[#f5f5f5]/30 text-[10px] tracking-[0.3em] uppercase">
-                  {testimonials[current].location}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Navigation */}
-          <div className="flex items-center gap-4 mt-14">
-            <button
-              onClick={prev}
-              className="w-12 h-12 border border-[#f5f5f5]/15 flex items-center justify-center text-[#f5f5f5]/40 hover:border-[#f5f5f5]/40 hover:text-[#f5f5f5] transition-colors duration-300"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <button
-              onClick={next}
-              className="w-12 h-12 border border-[#f5f5f5]/15 flex items-center justify-center text-[#f5f5f5]/40 hover:border-[#f5f5f5]/40 hover:text-[#f5f5f5] transition-colors duration-300"
-            >
-              <ChevronRight size={18} />
-            </button>
-            <div className="flex gap-2 ml-2">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  className={`h-px transition-all duration-300 ${
-                    i === current ? "w-8 bg-[#f5f5f5]/60" : "w-4 bg-[#f5f5f5]/20"
-                  }`}
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          {/* Image Side */}
+          <div className="lg:col-span-5 relative">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`img-${current}`}
+                initial={{ opacity: 0, scale: 1.04, x: -20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.96, x: 20 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="relative aspect-[3/4] overflow-hidden"
+              >
+                {/* Image */}
+                <img
+                  src={testimonials[current].image}
+                  alt={testimonials[current].author}
+                  className="w-full h-full object-cover grayscale contrast-110 brightness-90"
                 />
-              ))}
-            </div>
+
+                {/* Dark gradient overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-transparent to-transparent opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0e0e0e]/40 to-transparent opacity-50" />
+
+                {/* Border frame */}
+                <div className="absolute inset-3 border border-[#f5f5f5]/8 pointer-events-none" />
+
+                {/* Tag floating on image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  className="absolute bottom-6 left-6 right-6"
+                >
+                  <span className="font-['DM_Sans'] text-[9px] tracking-[0.4em] uppercase text-[#f5f5f5]/50 bg-[#0e0e0e]/60 backdrop-blur-sm px-3 py-1.5 border border-[#f5f5f5]/10 inline-block">
+                    {testimonials[current].tag}
+                  </span>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Decorative element behind image */}
+            <div className="absolute -top-4 -right-4 w-full h-full border border-[#f5f5f5]/5 -z-10" />
+          </div>
+
+          {/* Text Side */}
+          <div className="lg:col-span-7 relative">
+            {/* Large quote mark */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.2, duration: 1 }}
+              className="absolute -top-8 -left-2 lg:-left-8 pointer-events-none select-none"
+            >
+              <Quote
+                size={80}
+                className="text-[#f5f5f5]/[0.04] stroke-[1]"
+                strokeWidth={0.5}
+              />
+            </motion.div>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`text-${current}`}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {/* Stars */}
+                <div className="flex gap-1.5 mb-8">
+                  {Array.from({ length: testimonials[current].stars }).map(
+                    (_, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: i * 0.08, duration: 0.4 }}
+                      >
+                        <Star
+                          size={13}
+                          className="text-[#f5f5f5]/50 fill-[#f5f5f5]/50"
+                        />
+                      </motion.div>
+                    )
+                  )}
+                </div>
+
+                {/* Quote */}
+                <blockquote className="font-['Bebas_Neue'] text-[#f5f5f5] text-2xl sm:text-3xl lg:text-[2.5rem] xl:text-[2.75rem] font-normal leading-[1.15] lg:leading-[1.1] mb-10 lg:mb-12 tracking-wide">
+                  &ldquo;{testimonials[current].quote}&rdquo;
+                </blockquote>
+
+                {/* Author */}
+                <div className="flex items-center gap-5">
+                  {/* Mini avatar */}
+                  <div className="w-11 h-11 rounded-full overflow-hidden border border-[#f5f5f5]/10 flex-shrink-0 grayscale">
+                    <img
+                      src={testimonials[current].image}
+                      alt=""
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <p className="font-['Jost'] text-[#f5f5f5] text-sm font-medium tracking-wide">
+                      {testimonials[current].author}
+                    </p>
+                    <p className="font-['Jost'] text-[#f5f5f5]/25 text-[10px] tracking-[0.3em] uppercase">
+                      {testimonials[current].location}
+                    </p>
+                  </div>
+
+                  <div className="h-8 w-px bg-[#f5f5f5]/10 ml-2" />
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Navigation - right aligned */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-3 mt-14 lg:mt-20"
+            >
+              <button
+                onClick={prev}
+                aria-label="Previous testimonial"
+                className="group w-12 h-12 border border-[#f5f5f5]/10 flex items-center justify-center text-[#f5f5f5]/30 hover:border-[#f5f5f5]/30 hover:text-[#f5f5f5]/80 transition-all duration-400 hover:bg-[#f5f5f5]/[0.03]"
+              >
+                <ChevronLeft size={16} className="group-hover:-translate-x-0.5 transition-transform duration-300" />
+              </button>
+              <button
+                onClick={next}
+                aria-label="Next testimonial"
+                className="group w-12 h-12 border border-[#f5f5f5]/10 flex items-center justify-center text-[#f5f5f5]/30 hover:border-[#f5f5f5]/30 hover:text-[#f5f5f5]/80 transition-all duration-400 hover:bg-[#f5f5f5]/[0.03]"
+              >
+                <ChevronRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
+              </button>
+
+              {/* Dot indicators */}
+              <div className="flex gap-2 ml-3 items-center">
+                {testimonials.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    aria-label={`Go to testimonial ${i + 1}`}
+                    className={`h-[2px] rounded-full transition-all duration-500 ease-out ${
+                      i === current
+                        ? "w-8 bg-[#f5f5f5]/50"
+                        : "w-3 bg-[#f5f5f5]/10 hover:bg-[#f5f5f5]/20"
+                    }`}
+                  />
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
+
+      {/* Bottom decorative line */}
     </section>
   );
 }

@@ -65,7 +65,7 @@ export default function About() {
           >
             <div className="relative w-full aspect-[3/4] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=800&q=80"
+                src="https://images.unsplash.com/photo-1758404255679-9afd847ede1c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Tattoo artist at work"
                 fill
                 className="object-cover grayscale"
@@ -108,7 +108,7 @@ export default function About() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-white/45 text-sm leading-[1.75] max-w-[340px] mb-10"
             >
-              Inkwell Studio was born from a passion for permanent art. Based in New Delhi,
+              crowninkwell Studio was born from a passion for permanent art. Based in New Delhi,
               we bring together artists who believe every tattoo is a lifelong conversation
               between the wearer and the world.
             </motion.p>

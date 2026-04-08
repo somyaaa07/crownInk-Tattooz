@@ -31,7 +31,8 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <div className="mb-5">
-           <img src="/logo1.png" alt="footer-logo" className="h-30 w-30 object-cover"/>
+                       <img src="/logo1.png" alt="footer-logo" className="h-30 w-30 object-cover"/>
+
             </div>
             <p className="font-['DM_Sans'] text-white/35 text-sm leading-relaxed mb-8 max-w-xs">
               Premium tattoo artistry in the heart of New Delhi. Where permanent
@@ -79,7 +80,7 @@ export default function Footer() {
       
       </div>
        <div className="overflow-hidden mb-12 border-b border-white/5 pb-12">
-          <p className="font-['Bebas_Neue'] text-white/[0.04] text-[21vw] leading-none tracking-widest select-none pointer-events-none">
+          <p className="font-['Bebas_Neue'] text-white/[0.04] text-[15vw] leading-none tracking-wide select-none pointer-events-none">
             CROWN INK 
           </p>
         </div>

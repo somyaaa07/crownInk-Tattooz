@@ -6,6 +6,7 @@ import Artists from "../component/Artist";
 import Testimonials from "../component/Testimonal";
 import Contact from "../component/Contact";
 import Footer from "../component/Footer";
+import Services from "@/component/Service";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Services/>
       <Gallery />
       <Artists />
       <Testimonials />

@@ -21,7 +21,7 @@ const services = [
     description:
       "Delicate and detailed, intricate designs with a subtle touch. Ideal for elegant and intricate ink.",
     href: "/services",
-    src: "https://i.pinimg.com/1200x/d3/38/25/d33825d77b021de8c20247bc92a316ec.jpg",
+    src: "https://images.unsplash.com/photo-1745390017975-d3d06cb2cccf?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Fine line tattoo flowers",
   },
   {
@@ -39,7 +39,7 @@ const services = [
     description:
       "Expert detail in small packages. Ideal for lifelike representations of your favorite images.",
     href: "/services",
-    src: "https://www.bleedink.ca/wp-content/uploads/2023/12/dog-micro-realism2023-12-17-225922.png",
+    src: "https://i.pinimg.com/1200x/a7/b2/90/a7b29072684186c38f775ac34ac73d2f.jpg",
     alt: "Micro realism dog tattoo",
   },
   {

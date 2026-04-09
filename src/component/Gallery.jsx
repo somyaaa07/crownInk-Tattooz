@@ -8,52 +8,52 @@ import { ArrowUpRight } from "lucide-react";
 const galleryItems = [
   {
     id: 1,
-    style: "Blackwork",
+    style: "Design",
     tag: "Sleeve",
-    src: "https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=800&q=80",
+    src: "/photos/image22.jpeg",
     span: "row-span-2",
   },
   {
     id: 2,
-    style: "Fine Line",
+    style: "Design",
     tag: "Wrist",
-    src: "https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=800&q=80",
+    src: "/photos/image23.jpeg",
     span: "",
   },
   {
     id: 3,
-    style: "Japanese",
+    style: "Design",
     tag: "Back",
-    src: "https://images.unsplash.com/photo-1542727365-19732a80dcfd?w=800&q=80",
+    src: "/photos/image25.jpeg",
     span: "",
   },
   {
     id: 4,
-    style: "Geometric",
+    style: "Design",
     tag: "Chest",
-    src: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&q=80",
+    src: "/photos/image27.jpeg",
     // CHANGED: removed "col-span-2" on mobile (applied via responsive class below)
     span: "sm:col-span-2",
   },
   {
     id: 5,
-    style: "Neo-Trad",
+    style: "Design",
     tag: "Arm",
-    src: "https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=800&q=80",
+    src: "/photos/image55.jpeg",
     span: "",
   },
   {
     id: 6,
-    style: "Minimalist",
+    style: "Design",
     tag: "Ankle",
-    src: "https://images.unsplash.com/photo-1549989476-69a92fa57c36?w=800&q=80",
+    src: "/photos/image67.jpeg",
     span: "",
   },
   {
     id: 7,
-    style: "Minimalist",
+    style: "Design",
     tag: "Ankle",
-    src: "https://images.unsplash.com/photo-1549989476-69a92fa57c36?w=800&q=80",
+    src: "/photos/image2.jpeg",
     span: "",
   },
 ];
@@ -137,9 +137,7 @@ export default function Gallery() {
 
               {/* Style tag */}
               <div className="absolute top-4 left-4 z-10">
-                <span className="font-['DM_Sans'] text-white/70 text-[9px] tracking-[0.4em] uppercase font-semibold bg-black/50 px-2.5 py-1 backdrop-blur-sm">
-                  {item.tag}
-                </span>
+             
               </div>
 
               {/* Arrow on hover */}

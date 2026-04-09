@@ -12,7 +12,7 @@ const services = [
     description:
       "Capture the essence of a loved one or icons. Our artists skillfully recreate faces with stunning accuracy and emotion.",
     href: "/services",
-    src: "https://i.pinimg.com/736x/fd/03/6e/fd036eacc08b08214c5d3bbaf8f4f2f4.jpg",
+    src: "/photos/image77.jpeg",
     alt: "Portrait tattoo Post Malone",
   },
   {
@@ -21,7 +21,7 @@ const services = [
     description:
       "Delicate and detailed, intricate designs with a subtle touch. Ideal for elegant and intricate ink.",
     href: "/services",
-    src: "https://images.unsplash.com/photo-1745390017975-d3d06cb2cccf?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/photos/image10.jpeg",
     alt: "Fine line tattoo flowers",
   },
   {
@@ -30,7 +30,7 @@ const services = [
     description:
       "Blend symmetry and creativity. Perfect for abstract patterns and shapes that make a striking statement.",
     href: "/services",
-    src: "https://i.pinimg.com/1200x/ac/55/cd/ac55cd56e890e104401f945689e8093a.jpg",
+    src: "/photos/image40.jpeg",
     alt: "Geometric camera tattoo",
   },
   {
@@ -39,7 +39,7 @@ const services = [
     description:
       "Expert detail in small packages. Ideal for lifelike representations of your favorite images.",
     href: "/services",
-    src: "https://i.pinimg.com/1200x/a7/b2/90/a7b29072684186c38f775ac34ac73d2f.jpg",
+    src: "/photos/image16.jpeg",
     alt: "Micro realism dog tattoo",
   },
   {
@@ -48,7 +48,7 @@ const services = [
     description:
       "Embrace simplicity. Clean lines and understated designs for a sleek, modern look.",
     href: "/services",
-    src: "https://www.bleedink.ca/wp-content/uploads/2023/12/minimalistic-tattoo2023-12-17-225922.png",
+    src: "https://i.pinimg.com/1200x/57/72/80/577280f2ceb25e314188c7d240425a40.jpg",
     alt: "Minimalistic tattoo",
   },
   {
@@ -57,7 +57,7 @@ const services = [
     description:
       "From nature scenes to detailed objects, experience tattoos that look almost real.",
     href: "/services",
-    src: "https://www.bleedink.ca/wp-content/uploads/2023/12/Bleed-Ink-realism-tiger-sleeve.png",
+    src: "/photos/image73.jpeg",
     alt: "Realistic tiger tattoo",
   },
 ];

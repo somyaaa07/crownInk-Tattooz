@@ -12,6 +12,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
+<<<<<<< HEAD
           src="/Banner5.png"
           alt="Tattoo studio banner"
           fill
@@ -32,6 +33,29 @@ export default function HeroSection() {
           fill
           className="hidden md:block lg:hidden object-cover object-center "
         />
+=======
+                        src="/Banner5.png"
+                        alt="Tattoo studio banner"
+                        fill
+                        priority
+                        className="object-cover object-center hidden lg:block"
+                           unoptimized
+                      />
+                            <Image
+                      src="/banner/40.png"
+                      alt="Mobile"
+                      fill
+                      className="block md:hidden object-cover object-center"
+                    />
+      
+                    
+                        <Image
+                      src="/banner/35.png"
+                      alt="Tablet"
+                   fill
+                      className="hidden md:block lg:hidden object-cover object-center "
+                    />
+>>>>>>> 4da5fe1468bd5abca44c514ab4a529eeb3f78758
       </div>
 
       {/* Grain */}

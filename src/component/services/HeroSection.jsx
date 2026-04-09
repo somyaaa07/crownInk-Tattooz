@@ -11,6 +11,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-[#0a0a0a]">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
+<<<<<<< HEAD
         <Image
           src="/Banner2.png"
           alt="Tattoo studio banner"
@@ -32,6 +33,30 @@ export default function HeroSection() {
           fill
           className="hidden md:block lg:hidden object-cover object-center "
         />
+=======
+       <Image
+                       src="/Banner2.png"
+                       alt="Tattoo studio banner"
+                       fill
+                       priority
+                       className="object-cover object-center hidden lg:block"
+                          unoptimized
+                     />
+                           <Image
+                     src="/banner/39.png"
+                     alt="Mobile"
+                     fill
+                     className="block md:hidden object-cover object-center"
+                   />
+     
+                   
+                       <Image
+                     src="/tablet-banner/20.png"
+                     alt="Tablet"
+                  fill
+                     className="hidden md:block lg:hidden object-cover object-center "
+                   />
+>>>>>>> 4da5fe1468bd5abca44c514ab4a529eeb3f78758
       </div>
 
       {/* Grain */}

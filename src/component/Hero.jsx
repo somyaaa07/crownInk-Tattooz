@@ -20,6 +20,7 @@ export default function Hero() {
           priority
           className="object-cover object-center hidden lg:block"
         />
+<<<<<<< HEAD
         <Image
           src="/Banner1.png"
           alt="Mobile"
@@ -32,6 +33,20 @@ export default function Hero() {
           fill
           className="hidden md:block lg:hidden object-cover object-center "
         />
+=======
+              <Image
+        src="/phone-banner/33.png"
+        alt="Mobile"
+        fill
+        className="block md:hidden object-cover object-center"
+      />
+          <Image
+        src="/tablet-banner/19.png"
+        alt="Tablet"
+     fill
+        className="hidden md:block lg:hidden object-cover object-center "
+      />
+>>>>>>> 4da5fe1468bd5abca44c514ab4a529eeb3f78758
 
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f0f0f] via-[#0f0f0f]/70 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-[#0f0f0f]/40" />

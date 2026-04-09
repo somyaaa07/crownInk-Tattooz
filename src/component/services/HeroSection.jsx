@@ -11,28 +11,27 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-[#0a0a0a]">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-       <Image
-                       src="/Banner2.png"
-                       alt="Tattoo studio banner"
-                       fill
-                       priority
-                       className="object-cover object-center hidden lg:block"
-                          unoptimized
-                     />
-                           <Image
-                     src="/15.png"
-                     alt="Mobile"
-                     fill
-                     className="block md:hidden object-cover object-center"
-                   />
-     
-                   
-                       <Image
-                     src="/Banner3.png"
-                     alt="Tablet"
-                  fill
-                     className="hidden md:block lg:hidden object-cover object-center "
-                   />
+        <Image
+          src="/Banner2.png"
+          alt="Tattoo studio banner"
+          fill
+          priority
+          className="object-cover object-center hidden lg:block"
+          unoptimized
+        />
+        <Image
+          src="/15.png"
+          alt="Mobile"
+          fill
+          className="block md:hidden object-cover object-center"
+        />
+
+        <Image
+          src="/Banner3.png"
+          alt="Tablet"
+          fill
+          className="hidden md:block lg:hidden object-cover object-center "
+        />
       </div>
 
       {/* Grain */}
@@ -55,7 +54,7 @@ export default function HeroSection() {
         >
           <div className="h-px w-8 bg-white/30 mt-18" />
           <span className="font-['DM_Sans'] mt-18 text-white/40 text-[9px] sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-semibold ">
-            crowninkwell Studio · New Delhi
+            crowninkwell Studio · Greater Noida
           </span>
         </motion.div>
 

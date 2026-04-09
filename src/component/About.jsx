@@ -2,6 +2,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { DM_Sans, Bebas_Neue, Space_Mono } from "next/font/google";
@@ -40,7 +41,6 @@ export default function About() {
       className={`${dmSans.className} bg-[#111] py-16 px-4 sm:px-8 overflow-hidden`}
     >
       <div className="max-w-[1200px] mx-auto">
-
         {/* Label row */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -48,7 +48,9 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-4 mb-10 sm:mb-14"
         >
-          <span className={`${spaceMono.className} text-[10px] text-white/30 tracking-widest uppercase whitespace-nowrap`}>
+          <span
+            className={`${spaceMono.className} text-[10px] text-white/30 tracking-widest uppercase whitespace-nowrap`}
+          >
             02 — Our Philosophy
           </span>
           <div className="flex-1 h-px bg-white/10" />
@@ -57,7 +59,6 @@ export default function About() {
         {/* Main grid */}
         {/* CHANGED: gap-10 md:gap-12 — slightly tighter gap on tablet */}
         <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-start">
-
           {/* LEFT: Image */}
           <motion.div
             initial={{ opacity: 0, x: -32 }}
@@ -84,8 +85,14 @@ export default function About() {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="absolute bottom-6 -right-2 sm:-right-4 bg-[#111] border border-white/12 p-4 sm:p-5"
             >
-              <p className={`${bebasNeue.className} text-white text-[40px] sm:text-[48px] leading-none`}>8+</p>
-              <p className={`${spaceMono.className} text-white/35 text-[9px] tracking-widest uppercase mt-1`}>
+              <p
+                className={`${bebasNeue.className} text-white text-[40px] sm:text-[48px] leading-none`}
+              >
+                8+
+              </p>
+              <p
+                className={`${spaceMono.className} text-white/35 text-[9px] tracking-widest uppercase mt-1`}
+              >
                 Years in Ink
               </p>
             </motion.div>
@@ -93,7 +100,6 @@ export default function About() {
 
           {/* RIGHT: Content */}
           <div className="flex flex-col sm:order-1 order-1 lg:order-2 xl:order-2 md:order-2">
-
             {/* Heading */}
             <div className="overflow-hidden mb-1">
               <motion.h2
@@ -102,7 +108,9 @@ export default function About() {
                 transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
                 className={`${bebasNeue.className} text-white text-[clamp(44px,7vw,80px)] leading-[0.92] tracking-[0.02em] mb-7`}
               >
-                WHERE SKIN<br />BECOMES CANVAS <br />
+                WHERE SKIN
+                <br />
+                BECOMES CANVAS <br />
               </motion.h2>
             </div>
 
@@ -113,9 +121,10 @@ export default function About() {
               // CHANGED: max-w-full md:max-w-[340px] — use full width on mobile
               className="text-white/45 text-sm leading-[1.8] max-w-full md:max-w-[400px] mb-10"
             >
-              crowninkwell Studio was born from a passion for permanent art. Based in New Delhi,
-              we bring together artists who believe every tattoo is a lifelong conversation
-              between the wearer and the world.
+              crowninkwell Studio was born from a passion for permanent art.
+              Based in New Delhi, we bring together artists who believe every
+              tattoo is a lifelong conversation between the wearer and the
+              world.
             </motion.p>
 
             {/* Values */}
@@ -128,11 +137,15 @@ export default function About() {
                   transition={{ delay: 0.35 + i * 0.12, duration: 0.6 }}
                   className="flex items-start gap-5 py-5 border-b border-white/8"
                 >
-                  <span className={`${spaceMono.className} text-white/20 text-[10px] tracking-widest pt-[3px] min-w-[24px]`}>
+                  <span
+                    className={`${spaceMono.className} text-white/20 text-[10px] tracking-widest pt-[3px] min-w-[24px]`}
+                  >
                     {v.number}
                   </span>
                   <div className="flex-1">
-                    <div className={`${bebasNeue.className} text-white/85 text-lg tracking-[0.05em] mb-1`}>
+                    <div
+                      className={`${bebasNeue.className} text-white/85 text-lg tracking-[0.05em] mb-1`}
+                    >
                       {v.title}
                     </div>
                     <div className="text-white/38 text-[13px] leading-[1.65]">
@@ -152,14 +165,20 @@ export default function About() {
               className="mt-10"
             >
               {/* CHANGED: w-full sm:w-auto justify-center sm:justify-start — full width tap target on mobile */}
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className={`${spaceMono.className} inline-flex items-center justify-center sm:justify-start w-full sm:w-auto gap-3 border border-white/20 px-7 py-3 text-white text-[10px] tracking-widest uppercase transition-colors`}
-                onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#111"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#fff";
+                  e.currentTarget.style.color = "#111";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.color = "#fff";
+                }}
               >
                 Book a Consultation →
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>

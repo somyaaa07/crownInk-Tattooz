@@ -14,15 +14,20 @@ import FinalCTA from "@/component/services/FinalCTA";
 import Footer from "@/component/services/Footer";
 
 export const metadata = {
-  title: "Our Services | Crown Ink Tattoo Studio",
+  title: "Tattoo Services | Crown Ink Tattoo Studio, Greater Noida",
   description:
-    "Explore our full range of tattoo services — from fine line and blackwork to custom designs, cover-ups, and portraits. New Delhi's premium tattoo studio.",
+    "Discover Crown Ink Tattoo Studio's professional tattoo services in Greator Noida. From fine line, blackwork, and Japanese styles to custom designs, cover-ups, and portrait tattoos, our expert artists bring your vision to life.",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function ServicesPage() {
   return (
     <main className="bg-[#1c1c1c] text-[#f5f5f5] min-h-screen">
-        <Navbar/>
+      <Navbar />
       <HeroSection />
       <ServicesGrid />
       <ServiceDetails />
@@ -34,7 +39,7 @@ export default function ServicesPage() {
       <PricingSection />
       <FAQSection />
       <FinalCTA />
-      <Footer/>
+      <Footer />
     </main>
   );
 }

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { MoveRight, ArrowDownRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -19,18 +20,18 @@ export default function Hero() {
           priority
           className="object-cover object-center hidden lg:block"
         />
-              <Image
-        src="/Banner1.png"
-        alt="Mobile"
-        fill
-        className="block md:hidden object-cover object-center"
-      />
-          <Image
-        src="/Banner3.png"
-        alt="Tablet"
-     fill
-        className="hidden md:block lg:hidden object-cover object-center "
-      />
+        <Image
+          src="/Banner1.png"
+          alt="Mobile"
+          fill
+          className="block md:hidden object-cover object-center"
+        />
+        <Image
+          src="/Banner3.png"
+          alt="Tablet"
+          fill
+          className="hidden md:block lg:hidden object-cover object-center "
+        />
 
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f0f0f] via-[#0f0f0f]/70 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-[#0f0f0f]/40" />
@@ -70,7 +71,7 @@ export default function Hero() {
             <div className="h-px w-8 bg-white/40" />
             {/* CHANGED: text-[9px] sm:text-[11px] — slightly smaller label on mobile */}
             <span className="font-['DM_Sans'] text-white/40 text-[9px] sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-medium">
-              Premium Tattoo Studio · New Delhi
+              Premium Tattoo Studio · Greater Noida
             </span>
           </motion.div>
 
@@ -126,18 +127,18 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
             {/* CHANGED: w-full sm:w-auto px-6 sm:px-10 — full-width buttons on mobile */}
-            <a
-              href="#gallery"
+            <Link
+              href="/gallery"
               className="inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-semibold text-[#0f0f0f] bg-white w-full sm:w-auto px-6 sm:px-10 py-4 hover:bg-white/85 transition-colors duration-300"
             >
               View Gallery <MoveRight size={14} />
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-semibold text-white border border-white/30 w-full sm:w-auto px-6 sm:px-10 py-4 hover:border-white/70 hover:bg-white/5 transition-all duration-300"
             >
               Book a Session
-            </a>
+            </Link>
           </motion.div>
         </div>
 

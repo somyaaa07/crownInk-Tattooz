@@ -11,9 +11,15 @@ import Footer from "@/component/contact/Footer";
 import Navbar from "@/component/Navbar";
 
 export const metadata = {
-  title: "Contact | Crown Ink Tattoo Studio",
+  title:
+    "Contact Crown Ink Tattoo Studio | Book Tattoo Appointment in Greater Noida",
   description:
-    "Browse our portfolio of custom tattoos — fine line, blackwork, Japanese, geometric, portrait, and minimalist styles. New Delhi's premium tattoo studio.",
+    "Contact Crown Ink Tattoo Studio in New Delhi to book your tattoo appointment or consultation. Call, WhatsApp, or visit us for custom tattoos, fine line, blackwork, and more.",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 export default function ContactPage() {
   return (

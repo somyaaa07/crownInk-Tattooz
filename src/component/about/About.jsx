@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
@@ -87,12 +87,12 @@ export default function AboutPage() {
                   team delivers precision, hygiene, and unmatched artistry.
                 </p>
                 <div className="mt-4">
-                  <a
-                    href="#contact"
+                  <Link
+                    href="/contact"
                     className="inline-block border border-white px-8 py-3 mb-24 text-xs tracking-widest uppercase hover:bg-white hover:text-black transition duration-300"
                   >
                     Book Consultation
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             </div>
@@ -486,13 +486,15 @@ export default function AboutPage() {
                 Got Questions ? We're Here to Help
               </h2>
 
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="px-8 py-3 bg-transparent border border-white text-white rounded"
-              >
-                Contact
-              </motion.button>
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="px-8 py-3 bg-transparent border border-white text-white rounded"
+                >
+                  Contact
+                </motion.button>
+              </Link>
             </div>
           </div>
         </div>

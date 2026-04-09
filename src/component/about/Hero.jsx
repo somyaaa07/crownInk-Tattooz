@@ -11,29 +11,27 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-[#0a0a0a]">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-       
-             <Image
-                  src="/Banner1.png"
-                  alt="Tattoo studio banner"
-                  fill
-                  priority
-                  className="object-cover object-center hidden lg:block"
-                     unoptimized
-                />
-                      <Image
-                src="/phone-banner/37.png"
-                alt="Mobile"
-                fill
-                className="block md:hidden object-cover object-center"
-              />
+        <Image
+          src="/Banner1.png"
+          alt="Tattoo studio banner"
+          fill
+          priority
+          className="object-cover object-center hidden lg:block"
+          unoptimized
+        />
+        <Image
+          src="/phone-banner/37.png"
+          alt="Mobile"
+          fill
+          className="block md:hidden object-cover object-center"
+        />
 
-              
-                  <Image
-                src="/tablet-banner/23.png"
-                alt="Tablet"
-             fill
-                className="hidden md:block lg:hidden object-cover object-center "
-              />
+        <Image
+          src="/tablet-banner/23.png"
+          alt="Tablet"
+          fill
+          className="hidden md:block lg:hidden object-cover object-center "
+        />
       </div>
 
       {/* Grain */}
@@ -58,7 +56,7 @@ export default function HeroSection() {
         >
           <div className="h-px w-8 bg-white/30 mt-24" />
           <span className="font-['DM_Sans'] mt-24 text-white/40 text-[9px] sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-semibold">
-            crowninkwell Studio · New Delhi
+            crowninkwell Studio · Greater Noida
           </span>
         </motion.div>
 
@@ -104,13 +102,13 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row gap-4"
         >
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-10 py-4 hover:bg-white transition-colors duration-300"
           >
             Book Appointment <MoveRight size={14} />
           </Link>
           <Link
-            href="#services-grid"
+            href="/services"
             className="inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-white border border-white/25 px-10 py-4 hover:border-white/60 hover:bg-white/5 transition-all duration-300"
           >
             View Services

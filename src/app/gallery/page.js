@@ -6,15 +6,20 @@ import GalleryFooter from "@/component/services/Footer";
 import Navbar from "@/component/Navbar";
 
 export const metadata = {
-  title: "Gallery | Crown Ink Tattoo Studio",
+  title: "Tattoo Gallery | Crown Ink Tattoo Studio, Greater Noida",
   description:
-    "Browse our portfolio of custom tattoos — fine line, blackwork, Japanese, geometric, portrait, and minimalist styles. New Delhi's premium tattoo studio.",
+    "Explore Crown Ink Tattoo Studio's gallery of custom tattoos in Greator Noida. Featuring fine line, blackwork, Japanese, geometric, portrait, and minimalist tattoo styles by expert artists.",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function GalleryPage() {
   return (
     <main className="bg-[#1c1c1c] text-[#f5f5f5] min-h-screen">
-        <Navbar/>
+      <Navbar />
       <GalleryHero />
       <GalleryGrid />
       <GalleryFooter />

@@ -5,9 +5,14 @@ import { useRef } from "react";
 import { MapPin, Phone, Clock, Send } from "lucide-react";
 
 const info = [
-  { icon: MapPin, label: "Location", value: "Connaught Place, New Delhi, 110001" },
-  { icon: Phone, label: "Contact", value: "+91 98765 43210" },
-  { icon: Clock, label: "Hours", value: "Tue–Sun · 11am – 8pm" },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: `4 Murti, Shop No- LGB -23 Galaxy Diamond Plaza Mall,
+    near, Greater Noida W Rd, Haibatpur Sector 4, Greater Noida, Uttar Pradesh 201307`,
+  },
+  { icon: Phone, label: "Contact", value: "+91-82873 33505" },
+  { icon: Clock, label: "Hours", value: "Thu–Wed · 11am – 8pm" },
 ];
 
 const styles = [
@@ -26,9 +31,12 @@ export default function Contact() {
 
   return (
     // CHANGED: px-4 sm:px-6 lg:px-12 — consistent section padding
-    <section id="contact" ref={ref} className="bg-[#141414] py-24 px-4 sm:px-6 lg:px-12">
+    <section
+      id="contact"
+      ref={ref}
+      className="bg-[#141414] py-24 px-4 sm:px-6 lg:px-12"
+    >
       <div className="max-w-7xl mx-auto">
-
         {/* Header */}
         <div className="mb-14">
           <motion.div
@@ -58,7 +66,6 @@ export default function Contact() {
 
         {/* CHANGED: gap-10 lg:gap-20 — tighter gap on mid sizes */}
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-20">
-
           {/* Left — Form (3 cols) */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -70,7 +77,11 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {[
                 { label: "Name", type: "text", placeholder: "Your name" },
-                { label: "Email", type: "email", placeholder: "your@email.com" },
+                {
+                  label: "Email",
+                  type: "email",
+                  placeholder: "your@email.com",
+                },
               ].map((field) => (
                 <div key={field.label} className="flex flex-col gap-2">
                   <label className="font-['DM_Sans'] text-white/40 text-[10px] tracking-[0.4em] uppercase font-semibold">
@@ -132,7 +143,10 @@ export default function Contact() {
             <div className="space-y-8 sm:border-l border-white/8 sm:pl-8">
               {info.map((item) => (
                 <div key={item.label} className="flex gap-5 items-start">
-                  <item.icon size={15} className="text-white/30 mt-0.5 shrink-0" />
+                  <item.icon
+                    size={15}
+                    className="text-white/30 mt-0.5 shrink-0"
+                  />
                   <div>
                     <p className="font-['DM_Sans'] text-white/30 text-[10px] tracking-[0.4em] uppercase mb-1 font-semibold">
                       {item.label}

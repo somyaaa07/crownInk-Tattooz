@@ -7,9 +7,23 @@ import { CiYoutube } from "react-icons/ci";
 import Link from "next/link";
 
 const footerLinks = {
-  Studio: ["About Us", "Our Artists", "Gallery", "FAQ"],
-  Services: ["Custom Tattoo", "Cover-Up", "Touch-Up", "Consultation"],
-  Legal: ["Privacy Policy", "Terms of Service", "Aftercare Guide"],
+  Studio: [
+    { name: "About Us", href: "/about" },
+    { name: "Our Artists", href: "/about" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "FAQ", href: "/services" },
+  ],
+  Services: [
+    { name: "Custom Tattoo", href: "/services" },
+    { name: "Cover-Up", href: "/services" },
+    { name: "Touch-Up", href: "/services" },
+    { name: "Consultation", href: "/services" },
+  ],
+  Legal: [
+    { name: "Privacy Policy", href: "/contact" },
+    { name: "Terms of Service", href: "/contact" },
+    { name: "Aftercare Guide", href: "/services" },
+  ],
 };
 
 const socials = [
@@ -80,14 +94,15 @@ export default function Footer() {
               <p className="font-['DM_Sans'] text-white/30 text-[9px] tracking-[0.5em] uppercase mb-5 font-semibold">
                 {category}
               </p>
+
               <ul className="space-y-3">
                 {links.map((link) => (
-                  <li key={link}>
+                  <li key={link.name}>
                     <Link
-                      href="#"
+                      href={link.href}
                       className="font-['DM_Sans'] text-white/40 text-sm hover:text-white/80 transition-colors duration-200"
                     >
-                      {link}
+                      {link.name}
                     </Link>
                   </li>
                 ))}

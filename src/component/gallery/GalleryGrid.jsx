@@ -7,7 +7,6 @@ import GalleryItem from "./GalleryItems";
 import Lightbox from "./Lightbox";
 import { categories, galleryImages } from "../../app/gallery/data/GalleryData";
 import { SlidersHorizontal } from "lucide-react";
-
 const PAGE_SIZE = 12;
 
 export default function GalleryGrid() {
@@ -21,7 +20,7 @@ export default function GalleryGrid() {
       activeCategory === "All"
         ? galleryImages
         : galleryImages.filter((img) => img.category === activeCategory),
-    [activeCategory]
+    [activeCategory],
   );
 
   const visible = filtered.slice(0, visibleCount);
@@ -50,7 +49,6 @@ export default function GalleryGrid() {
   return (
     <section id="gallery-grid" className="bg-[#1c1c1c] py-20 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
-
         {/* Filter bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 mb-12">
           <div className="flex items-center gap-2">
@@ -111,9 +109,11 @@ export default function GalleryGrid() {
                 break-inside: avoid;
                 margin-bottom: 12px;
               }
-           
+
               @media (min-width: 1024px) {
-                .masonry-grid { columns: 4; }
+                .masonry-grid {
+                  columns: 4;
+                }
               }
             `}</style>
 
@@ -129,11 +129,7 @@ export default function GalleryGrid() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
-                <GalleryItem
-                  item={item}
-                  index={i}
-                  onOpen={setLightboxItem}
-                />
+                <GalleryItem item={item} index={i} onOpen={setLightboxItem} />
               </motion.div>
             ))}
           </motion.div>

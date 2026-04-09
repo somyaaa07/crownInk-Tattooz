@@ -15,7 +15,6 @@ export default function GalleryGrid() {
   const [lightboxItem, setLightboxItem] = useState(null);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  // Filter images
   const filtered = useMemo(
     () =>
       activeCategory === "All"
@@ -27,7 +26,6 @@ export default function GalleryGrid() {
   const visible = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
 
-  // Lightbox nav
   const currentLightboxIndex = lightboxItem
     ? filtered.findIndex((i) => i.id === lightboxItem.id)
     : -1;
@@ -48,11 +46,11 @@ export default function GalleryGrid() {
   };
 
   return (
-    <section id="gallery-grid" className="bg-[#1c1c1c] py-20 px-6 lg:px-12">
+    <section id="gallery-grid" className="bg-[#1c1c1c] py-20 px-4 sm:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
 
         {/* Filter bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-5 mb-8 sm:mb-12">
           <div className="flex items-center gap-2">
             <SlidersHorizontal size={13} className="text-[#f5f5f5]/30" />
             <span className="font-['DM_Sans'] text-[#f5f5f5]/30 text-[10px] tracking-[0.4em] uppercase font-semibold">
@@ -60,7 +58,6 @@ export default function GalleryGrid() {
             </span>
           </div>
 
-          {/* Category pills */}
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
               <button
@@ -84,11 +81,6 @@ export default function GalleryGrid() {
         </div>
 
         {/* Masonry grid */}
-        {/*
-          CSS columns masonry — most robust cross-browser approach.
-          We use a CSS columns layout which creates a true Pinterest-style
-          masonry without JS calculation.
-        */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
@@ -97,23 +89,24 @@ export default function GalleryGrid() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
             className="masonry-grid"
-            style={{
-              columns: "4",
-              columnGap: "12px",
-            }}
           >
             <style jsx>{`
               .masonry-grid {
-                columns: 4;
+                columns: 1;        /* CHANGED: default 1 column on mobile */
                 column-gap: 12px;
               }
               .masonry-item {
                 break-inside: avoid;
                 margin-bottom: 12px;
               }
-           
+              @media (min-width: 480px) {
+                .masonry-grid { columns: 2; }  /* CHANGED: 2 cols on small mobile-landscape */
+              }
+              @media (min-width: 768px) {
+                .masonry-grid { columns: 3; }  /* CHANGED: 3 cols on tablet */
+              }
               @media (min-width: 1024px) {
-                .masonry-grid { columns: 4; }
+                .masonry-grid { columns: 4; }  /* Preserved: 4 cols on desktop */
               }
             `}</style>
 
@@ -141,10 +134,10 @@ export default function GalleryGrid() {
 
         {/* Load more */}
         {hasMore && (
-          <div className="flex justify-center mt-14">
+          <div className="flex justify-center mt-10 sm:mt-14">
             <button
               onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
-              className="font-['DM_Sans'] text-[11px] tracking-[0.35em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-12 py-4 hover:bg-white transition-colors duration-300"
+              className="font-['DM_Sans'] text-[11px] tracking-[0.35em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-8 sm:px-12 py-4 hover:bg-white transition-colors duration-300 w-full sm:w-auto"
             >
               Load More ({filtered.length - visibleCount} remaining)
             </button>
@@ -153,7 +146,7 @@ export default function GalleryGrid() {
 
         {/* All loaded */}
         {!hasMore && filtered.length > 0 && (
-          <div className="flex items-center justify-center gap-4 mt-14">
+          <div className="flex items-center justify-center gap-4 mt-10 sm:mt-14">
             <div className="h-px w-12 bg-[#f5f5f5]/10" />
             <span className="font-['DM_Sans'] text-[#f5f5f5]/20 text-[10px] tracking-[0.4em] uppercase font-semibold">
               All {filtered.length} works shown

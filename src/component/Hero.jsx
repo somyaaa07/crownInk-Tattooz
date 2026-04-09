@@ -20,13 +20,13 @@ export default function Hero() {
           className="object-cover object-center hidden lg:block"
         />
               <Image
-        src="/Banner1.png"
+        src="/phone-banner/33.png"
         alt="Mobile"
         fill
         className="block md:hidden object-cover object-center"
       />
           <Image
-        src="/Banner3.png"
+        src="/tablet-banner/19.png"
         alt="Tablet"
      fill
         className="hidden md:block lg:hidden object-cover object-center "

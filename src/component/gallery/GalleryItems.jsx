@@ -4,7 +4,6 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
-// Height map for masonry effect
 const heightMap = {
   tall: "row-span-2",
   medium: "",
@@ -34,11 +33,12 @@ export default function GalleryItem({ item, onOpen, index = 0 }) {
           fill
           loading="lazy"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+       
           unoptimized
         />
 
-        {/* Gradient overlay — always subtle at bottom */}
+        {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-400" />
 
         {/* Hover tint */}
@@ -56,7 +56,6 @@ export default function GalleryItem({ item, onOpen, index = 0 }) {
           </span>
         </div>
 
-        {/* Caption + artist — slide up on hover */}
         <div className="absolute bottom-0 left-0 right-0 z-10 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
           <p className="font-['Bebas_Neue'] text-[#f5f5f5] text-lg tracking-wider leading-none">
             {item.caption}

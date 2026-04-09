@@ -34,7 +34,6 @@ export default function HeroSection() {
 
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full ">
-
         {/* Label */}
         <motion.div
           initial={{ opacity: 0, x: -16 }}
@@ -42,8 +41,8 @@ export default function HeroSection() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="flex items-center gap-3 mb-8"
         >
-          <div className="h-px w-8 bg-white/30" />
-          <span className="font-['DM_Sans'] text-white/40 text-[10px] tracking-[0.5em] uppercase font-semibold">
+          <div className="h-px w-8 bg-white/30 mt-18" />
+          <span className="font-['DM_Sans'] mt-18 text-white/40 text-[9px] sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-semibold">
             crowninkwell Studio · New Delhi
           </span>
         </motion.div>
@@ -56,7 +55,7 @@ export default function HeroSection() {
             transition={{ delay: 0.5, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="font-['Bebas_Neue'] text-white text-[18vw] lg:text-[12vw] leading-[0.9] tracking-wide"
           >
-            OUR 
+            OUR
           </motion.h1>
         </div>
         <div className="overflow-hidden mb-8">

@@ -2,7 +2,7 @@
 
 import AboutUs from "@/component/about/About";
 import Navbar from "@/component/Navbar";
-import Footer from "@/component/about/Footer";;
+import Footer from "@/component/about/Footer";
 import HeroSection from "@/component/about/Hero";
 ;
 

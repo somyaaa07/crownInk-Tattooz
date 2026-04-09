@@ -32,7 +32,6 @@ export default function HeroSection() {
 
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-2 lg:px-12 md:px-6  py-10 sm:py-12  w-full">
-
         {/* Label */}
         <motion.div
           initial={{ opacity: 0, x: -16 }}
@@ -40,8 +39,8 @@ export default function HeroSection() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="flex items-center gap-3 mb-4 sm:mb-5"
         >
-          <div className="h-px w-8 bg-white/30" />
-          <span className="font-['DM_Sans'] text-white/40 text-[9px] sm:text-[10px] tracking-[0.5em] uppercase font-semibold ">
+          <div className="h-px w-8 bg-white/30 mt-18" />
+          <span className="font-['DM_Sans'] mt-18 text-white/40 text-[9px] sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-semibold ">
             crowninkwell Studio · New Delhi
           </span>
         </motion.div>
@@ -101,8 +100,6 @@ export default function HeroSection() {
           </Link>
         </motion.div>
       </div>
-
-  
     </section>
   );
 }

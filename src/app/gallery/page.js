@@ -2,7 +2,7 @@
 
 import GalleryHero from "@/component/gallery/GalleryHero";
 import GalleryGrid from "@/component/gallery/GalleryGrid";
-import GalleryFooter from "@/component/gallery/Footer";
+import GalleryFooter from "@/component/services/Footer";
 import Navbar from "@/component/Navbar";
 
 export const metadata = {

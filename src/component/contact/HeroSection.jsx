@@ -34,7 +34,6 @@ export default function HeroSection() {
 
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-25 w-full ">
-
         {/* Label */}
         <motion.div
           initial={{ opacity: 0, x: -16 }}
@@ -42,8 +41,8 @@ export default function HeroSection() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="flex items-center gap-3 mb-8 "
         >
-          <div className="h-px w-8 bg-white/30n" />
-          <span className="font-['DM_Sans'] -ml-3 text-white/40 text-[10px] tracking-[0.5em] uppercase font-semibold ">
+          <div className="h-px w-8 bg-white/30 mt-12" />
+          <span className="font-['DM_Sans']  mt-12 -ml-3 text-white/40 text-[9px] sm:text-[11px]  tracking-[0.2em] md:tracking-[0.5em] uppercase font-semibold ">
             crowninkwell Studio · New Delhi
           </span>
         </motion.div>
@@ -66,9 +65,7 @@ export default function HeroSection() {
             transition={{ delay: 0.62, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="font-['Bebas_Neue'] text-transparent text-[12vw] lg:text-[9vw] leading-[0.9] tracking-wide"
             style={{ WebkitTextStroke: "2px rgba(245,245,245,0.7)" }}
-          >
-           
-          </motion.h1>
+          ></motion.h1>
         </div>
 
         {/* Tagline */}

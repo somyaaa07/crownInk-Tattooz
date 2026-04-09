@@ -40,15 +40,13 @@ export default function Hero() {
         transition={{ duration: 0.6, delay: 0.2 }}
         // CHANGED: px-4 sm:px-6 lg:px-12 — tighter padding on small screens
         className="relative z-10 flex items-center justify-between px-4 sm:px-6 lg:px-12 pt-8"
-      >
-      </motion.div>
+      ></motion.div>
 
       {/* Main content */}
       {/* CHANGED: px-4 sm:px-6 lg:px-12 pb-10 sm:pb-16 — safer padding on mobile */}
       <div className="relative z-10 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-16 w-full mt-20 sm:mt-30">
         {/* CHANGED: max-w-full sm:max-w-xl lg:max-w-3xl — text block uses full width on mobile */}
         <div className="max-w-full sm:max-w-xl lg:max-w-3xl">
-
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -58,7 +56,7 @@ export default function Hero() {
           >
             <div className="h-px w-8 bg-white/40" />
             {/* CHANGED: text-[9px] sm:text-[11px] — slightly smaller label on mobile */}
-            <span className="font-['DM_Sans'] text-white/40 text-[9px] sm:text-[11px] tracking-[0.5em] uppercase font-medium">
+            <span className="font-['DM_Sans'] text-white/40 text-[9px] sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-medium">
               Premium Tattoo Studio · New Delhi
             </span>
           </motion.div>
@@ -68,7 +66,11 @@ export default function Hero() {
             <motion.h1
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
-              transition={{ delay: 0.6, duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                delay: 0.6,
+                duration: 0.85,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="font-['Bebas_Neue'] text-white text-[18vw] lg:text-[11vw] leading-[0.9] tracking-wide"
             >
               ART ON
@@ -78,7 +80,11 @@ export default function Hero() {
             <motion.h1
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
-              transition={{ delay: 0.72, duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                delay: 0.72,
+                duration: 0.85,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="font-['Bebas_Neue'] text-transparent text-[18vw] lg:text-[11vw] leading-[0.9] tracking-wide"
               style={{ WebkitTextStroke: "2px rgba(255,255,255,0.8)" }}
             >
@@ -147,8 +153,6 @@ export default function Hero() {
               </span>
             </div>
           ))}
-
-        
         </motion.div>
       </div>
 

@@ -30,7 +30,7 @@ export default function AboutPage() {
       <section ref={ref} className="py-20 px-4 sm:px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           {/* Heading */}
-        
+
           {/* Grid */}
           <div className="mt-24">
             {/* Label row */}
@@ -41,7 +41,6 @@ export default function AboutPage() {
               className="flex items-center gap-4 mb-14"
             >
               <span
-                // className={`${spaceMono.className} text-[10px] text-white/30 tracking-widest uppercase whitespace-nowrap`}
                 className={`${spaceMono.className} text-[10px] text-white/30 tracking-widest uppercase whitespace-nowrap`}
               >
                 01 — Perfection Is Ever
@@ -54,7 +53,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, x: -40 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8 }}
-                className="relative"
+                className="order-1  relative"
               >
                 <div className="relative w-full h-[400px] aspect-[3/4] rounded-xl overflow-hidden">
                   <Image
@@ -71,6 +70,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, x: 40 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8 }}
+                className="lg:order-1 sm:order-2 md:order-2"
               >
                 <h2
                   className={`${bebasNeue.className} text-[40px] sm:text-[60px] leading-tight mb-6 mt-8`}
@@ -78,7 +78,7 @@ export default function AboutPage() {
                   PERFECTION IS FOREVER
                 </h2>
 
-                <p className="text-white/50 text-sm sm:text-base leading-relaxed mb-24">
+                <p className="text-white/50 text-sm sm:text-base leading-relaxed mb-18">
                   Crown well Studio was born from a passion for permanent art.
                   Based in Greater Noida, we bring together artists who believe
                   every tattoo is a lifelong expression of identity and
@@ -86,7 +86,7 @@ export default function AboutPage() {
                   <br /> From minimal fine-line tattoos to bold blackwork, our
                   team delivers precision, hygiene, and unmatched artistry.
                 </p>
-                <div className="mt-8">
+                <div className="mt-4">
                   <a
                     href="#contact"
                     className="inline-block border border-white px-8 py-3 mb-24 text-xs tracking-widest uppercase hover:bg-white hover:text-black transition duration-300"
@@ -217,7 +217,7 @@ export default function AboutPage() {
                   MEET OUR FOUNDER
                 </h2>
                 <h2
-                  className={`${bebasNeue.className} text-[10px] sm:text-[30px] leading-normal mb-14`}
+                  className={`${bebasNeue.className}  sm:text-[30px] leading-normal mb-6`}
                 >
                   Paul-Anthony Surdi
                 </h2>
@@ -297,14 +297,14 @@ export default function AboutPage() {
                 {/* Content */}
                 <div className="relative z-10 ">
                   <div
-                    className={`${bebasNeue.className} text-[40px] px-12  sm:text-[60px] leading-tight mb-2 mt-2`}
+                    className={`${bebasNeue.className} text-[40px] px-12 whitespace-nowrap text-center sm:text-[60px] leading-tight mb-2 mt-2`}
                   >
                     OUR MISSION
                   </div>
                   {/* Divider */}
                   <div className=" bg-white/10 my-5" />
                   <p
-                    className={`${Jost_font.className} text-white/50 text-[20px]  items-center justify-center  sm:text-[20px] px-14 leading-tight mb-4 mt-4`}
+                    className={`${Jost_font.className} text-white/50 text-[20px]  items-center justify-center  sm:text-[20px]  leading-tight mb-4 mt-4`}
                   >
                     To ensure excellence and equal opportunity in the tattoo
                     industry, empowering artists to grow and build meaningful
@@ -338,14 +338,14 @@ export default function AboutPage() {
                 {/* Content */}
                 <div className="relative z-10 ">
                   <div
-                    className={`${bebasNeue.className} text-[40px] px-12  sm:text-[60px] leading-tight mb-2 mt-2`}
+                    className={`${bebasNeue.className} text-[40px] px-12 text-center whitespace-nowrap  sm:text-[60px] leading-tight mb-2 mt-2`}
                   >
                     OUR VISSION
                   </div>
                   {/* Divider */}
                   <div className=" bg-white/10 my-5" />
                   <p
-                    className={`${Jost_font.className} text-white/50 text-[20px]  items-center justify-center sm:text-[20px] px-14 leading-tight mb-4 mt-4`}
+                    className={`${Jost_font.className} text-white/50 text-[20px]  items-center justify-center sm:text-[20px]  leading-tight mb-4 mt-4`}
                   >
                     To build a global tattoo community that inspires creativity,
                     professionalism, and artistic freedom.

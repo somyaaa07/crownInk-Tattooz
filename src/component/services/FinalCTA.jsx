@@ -13,7 +13,6 @@ export default function FinalCTA() {
 
   return (
     <section id="final-cta" ref={ref} className="relative overflow-hidden bg-[#0a0a0a]">
-      {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1600&q=80"
@@ -25,7 +24,6 @@ export default function FinalCTA() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-[#0a0a0a]/60" />
       </div>
 
-      {/* Grain */}
       <div
         className="absolute inset-0 z-[1] opacity-15 pointer-events-none"
         style={{
@@ -34,8 +32,7 @@ export default function FinalCTA() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32 text-center">
-        {/* Label */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-20 sm:py-32 text-center">
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
@@ -49,23 +46,22 @@ export default function FinalCTA() {
           <div className="h-px w-8 bg-white/30" />
         </motion.div>
 
-        {/* Heading */}
         <div className="overflow-hidden mb-2">
           <motion.h2
             initial={{ y: "110%" }}
             animate={inView ? { y: 0 } : {}}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            className="font-['Bebas_Neue'] text-white text-[15vw] lg:text-[10vw] leading-[0.9] tracking-wide"
+            className="font-['Bebas_Neue'] text-white text-[18vw] sm:text-[15vw] lg:text-[10vw] leading-[0.9] tracking-wide"
           >
             READY TO GET
           </motion.h2>
         </div>
-        <div className="overflow-hidden mb-10">
+        <div className="overflow-hidden mb-8 sm:mb-10">
           <motion.h2
             initial={{ y: "110%" }}
             animate={inView ? { y: 0 } : {}}
             transition={{ duration: 0.85, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-['Bebas_Neue'] text-transparent text-[15vw] lg:text-[10vw] leading-[0.9] tracking-wide"
+            className="font-['Bebas_Neue'] text-transparent text-[18vw] sm:text-[15vw] lg:text-[10vw] leading-[0.9] tracking-wide"
             style={{ WebkitTextStroke: "2px rgba(245,245,245,0.65)" }}
           >
             INKED?
@@ -76,7 +72,7 @@ export default function FinalCTA() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.35, duration: 0.65 }}
-          className="font-['DM_Sans'] text-white/45 text-sm lg:text-base leading-relaxed max-w-md mx-auto mb-10"
+          className="font-['DM_Sans'] text-white/45 text-sm lg:text-base leading-relaxed max-w-sm sm:max-w-md mx-auto mb-8 sm:mb-10"
         >
           Book your free consultation today. Walk in with an idea — walk out
           with art that lasts a lifetime.
@@ -86,28 +82,27 @@ export default function FinalCTA() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.45, duration: 0.65 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           <Link
             href="#contact"
-            className="inline-flex items-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-12 py-5 hover:bg-white transition-colors duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-8 sm:px-12 py-5 hover:bg-white transition-colors duration-300"
           >
             Book Appointment <MoveRight size={14} />
           </Link>
           <Link
             href="tel:+919876543210"
-            className="inline-flex items-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-white border border-white/25 px-12 py-5 hover:border-white/60 hover:bg-white/5 transition-all duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-white border border-white/25 px-8 sm:px-12 py-5 hover:border-white/60 hover:bg-white/5 transition-all duration-300"
           >
             Call Us Now
           </Link>
         </motion.div>
 
-        {/* Studio info row */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.6 }}
-          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 lg:gap-12"
+          className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-12"
         >
           {[
             { label: "Location", val: "Connaught Place, New Delhi" },

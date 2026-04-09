@@ -32,7 +32,8 @@ const galleryItems = [
     style: "Geometric",
     tag: "Chest",
     src: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&q=80",
-    span: "col-span-2",
+    // CHANGED: removed "col-span-2" on mobile (applied via responsive class below)
+    span: "sm:col-span-2",
   },
   {
     id: 5,
@@ -48,7 +49,7 @@ const galleryItems = [
     src: "https://images.unsplash.com/photo-1549989476-69a92fa57c36?w=800&q=80",
     span: "",
   },
-    {
+  {
     id: 7,
     style: "Minimalist",
     tag: "Ankle",
@@ -62,7 +63,8 @@ export default function Gallery() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="gallery" ref={ref} className="bg-[#141414] py-24 px-6 lg:px-12">
+    // CHANGED: px-4 sm:px-6 lg:px-12 — consistent section padding
+    <section id="gallery" ref={ref} className="bg-[#141414] py-24 px-4 sm:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -85,7 +87,8 @@ export default function Gallery() {
                 initial={{ y: "100%" }}
                 animate={inView ? { y: 0 } : {}}
                 transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-                className="font-['Bebas_Neue'] text-white text-[13vw] lg:text-[7vw] leading-none tracking-wide"
+                // CHANGED: text-[15vw] sm:text-[13vw] lg:text-[7vw] — prevents blowout on small phones
+                className="font-['Bebas_Neue'] text-white text-[15vw] sm:text-[13vw] lg:text-[7vw] leading-none tracking-wide"
               >
                 THE GALLERY
               </motion.h2>
@@ -105,13 +108,20 @@ export default function Gallery() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-3 auto-rows-[280px] lg:auto-rows-[320px]">
+        {/*
+          CHANGED: grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+          auto-rows-[220px] sm:auto-rows-[280px] lg:auto-rows-[320px]
+          — shorter rows on mobile prevent cards from being too tall in single column
+        */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-3 auto-rows-[220px] sm:auto-rows-[280px] lg:auto-rows-[320px]">
           {galleryItems.map((item, i) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.08 * i, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              // CHANGED: item.span now uses sm: prefix for col-span-2 (see galleryItems above)
+              // row-span-2 still applies at all sizes since tall cards work in single col too
               className={`relative group overflow-hidden cursor-pointer bg-[#1e1e1e] ${item.span}`}
             >
               <Image
@@ -119,23 +129,20 @@ export default function Gallery() {
                 alt={item.style}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, 33vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
 
-              {/* Base dark vignette */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-
-              {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
-              {/* Style tag top-left */}
+              {/* Style tag */}
               <div className="absolute top-4 left-4 z-10">
                 <span className="font-['DM_Sans'] text-white/70 text-[9px] tracking-[0.4em] uppercase font-semibold bg-black/50 px-2.5 py-1 backdrop-blur-sm">
                   {item.tag}
                 </span>
               </div>
 
-              {/* Arrow top-right on hover */}
+              {/* Arrow on hover */}
               <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="w-8 h-8 bg-white flex items-center justify-center">
                   <ArrowUpRight size={14} className="text-black" />

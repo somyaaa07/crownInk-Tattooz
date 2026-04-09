@@ -59,14 +59,15 @@ export default function StudioInfo() {
         <div className="w-full h-70  overflow-hidden  relative">
           {/* Stylised map placeholder */}
           <div className="absolute inset-0 bg-studio-card flex flex-col items-center justify-center gap-2">
-             <div className="w-full h-[400px] md:h-[600px]  overflow-hidden border border-white/10 shadow-lg">
-          <iframe
-            title="Studio Location"
-            src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Greater%20Noida+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-            className="w-full h-full border-0"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+ <div className="w-full h-[600px]">
+      <iframe
+        title="Google Map"
+        className="w-full h-full border-0"
+        loading="lazy"
+        allowFullScreen
+        src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=4%20Murti,%20Shop%20No-%20LGB%20-23%20Galaxy%20Diamond%20Plaza%20Mall,%20near,%20Greater%20Noida%20W%20Rd,%20Haibatpur%20Sector%204,%20Greater%20Noida,%20Uttar%20Pradesh%20201307&t=&z=11&ie=UTF8&iwloc=B&output=embed"
+      ></iframe>
+         
              <svg
               className="w-8 h-8 text-studio-text relative z-50"
               fill="none"
@@ -122,8 +123,8 @@ export default function StudioInfo() {
               </svg>
             }
           >
-            <p className="font-[Jost]">47 Delancey Street, Studio 3B</p>
-            <p className="font-[Jost]">New York, NY 10002</p>
+            <p className="font-[Jost]">4 Murti, Shop No- LGB -23 Galaxy Diamond Plaza Mall,</p>
+            <p className="font-[Jost]"> near, Greater Noida W Rd, Haibatpur Sector 4, Greater Noida, Uttar Pradesh 201307</p>
           </InfoBlock>
 
           <div className="divider" />
@@ -151,7 +152,7 @@ export default function StudioInfo() {
               href="tel:+12125550147"
               className="hover:text-studio-text transition-colors duration-150"
             >
-              +1 (212) 555-0147
+              +91-82873 33505
             </a>
           </InfoBlock>
 
@@ -180,7 +181,7 @@ export default function StudioInfo() {
               href="mailto:hello@inkhaus.studio"
               className="hover:text-studio-text transition-colors duration-150"
             >
-              hello@inkhaus.studio
+             crowninktattoozz@gmail.com
             </a>
           </InfoBlock>
         </div>

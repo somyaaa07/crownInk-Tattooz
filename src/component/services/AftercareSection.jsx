@@ -33,7 +33,7 @@ export default function AftercareSection() {
             <h4 className="font-['Bebas_Neue'] text-white text-xl tracking-wider leading-none mb-3">
               {tip.title}
             </h4>
-            <p className="font-['DM_Sans'] text-white/45 text-sm leading-relaxed">
+            <p className="font-['DM_Sans'] text-white/45 text-md leading-relaxed">
               {tip.tip}
             </p>
           </motion.div>
@@ -47,7 +47,7 @@ export default function AftercareSection() {
         transition={{ delay: 0.5 }}
         className="mt-8 border-l-2 border-white/15 pl-6"
       >
-        <p className="font-['DM_Sans'] text-white/30 text-xs leading-relaxed">
+        <p className="font-['DM_Sans'] text-white/30 text-lg leading-relaxed">
           A detailed printed aftercare guide is provided after every session.
           If you experience unusual swelling, prolonged redness, or signs of
           infection — contact us immediately or consult a medical professional.

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,7 +11,7 @@ const services = [
     title: "Portrait Tattoos",
     description:
       "Capture the essence of a loved one or icons. Our artists skillfully recreate faces with stunning accuracy and emotion.",
-    href: "/portrait-tattoos",
+    href: "/services",
     src: "https://i.pinimg.com/736x/fd/03/6e/fd036eacc08b08214c5d3bbaf8f4f2f4.jpg",
     alt: "Portrait tattoo Post Malone",
   },
@@ -20,8 +20,8 @@ const services = [
     title: "Fine Line Tattoos",
     description:
       "Delicate and detailed, intricate designs with a subtle touch. Ideal for elegant and intricate ink.",
-    href: "/fine-line-tattoos",
-    src: "https://i.pinimg.com/webp/736x/2e/32/74/2e3274cef7e535e21611906be2a93a79.webp",
+    href: "/services",
+    src: "https://i.pinimg.com/1200x/d3/38/25/d33825d77b021de8c20247bc92a316ec.jpg",
     alt: "Fine line tattoo flowers",
   },
   {
@@ -29,8 +29,8 @@ const services = [
     title: "Geometric Tattoos",
     description:
       "Blend symmetry and creativity. Perfect for abstract patterns and shapes that make a striking statement.",
-    href: "/geometric-tattoos",
-    src: "https://www.bleedink.ca/wp-content/uploads/2023/12/Bleed-Ink-geometric-video-camera.png",
+    href: "/services",
+    src: "https://i.pinimg.com/1200x/ac/55/cd/ac55cd56e890e104401f945689e8093a.jpg",
     alt: "Geometric camera tattoo",
   },
   {
@@ -38,16 +38,16 @@ const services = [
     title: "Micro-Realism Tattoos",
     description:
       "Expert detail in small packages. Ideal for lifelike representations of your favorite images.",
-    href: "/micro-realism-tattoos",
+    href: "/services",
     src: "https://www.bleedink.ca/wp-content/uploads/2023/12/dog-micro-realism2023-12-17-225922.png",
     alt: "Micro realism dog tattoo",
   },
   {
     id: 5,
-    title: "Japenese Tattoos",
+    title: "Japanese Tattoos",
     description:
       "Embrace simplicity. Clean lines and understated designs for a sleek, modern look.",
-    href: "/minimalist-tattoos",
+    href: "/services",
     src: "https://www.bleedink.ca/wp-content/uploads/2023/12/minimalistic-tattoo2023-12-17-225922.png",
     alt: "Minimalistic tattoo",
   },
@@ -56,11 +56,87 @@ const services = [
     title: "Black Work",
     description:
       "From nature scenes to detailed objects, experience tattoos that look almost real.",
-    href: "/realism-tattoos",
+    href: "/services",
     src: "https://www.bleedink.ca/wp-content/uploads/2023/12/Bleed-Ink-realism-tiger-sleeve.png",
     alt: "Realistic tiger tattoo",
   },
 ];
+
+function ServiceCard({ service, index, inView }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <motion.div
+      key={service.id}
+      initial={{ opacity: 0, y: 28 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        delay: 0.08 * index,
+        duration: 0.65,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="relative w-full h-[320px] sm:h-[380px] lg:h-[400px] overflow-hidden bg-[#222] shadow-[1px_1px_5px_#111] cursor-pointer"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onTouchStart={() => setHovered((prev) => !prev)}
+    >
+      {/* Image with clip-path */}
+      <div
+        className="absolute inset-0 bg-black"
+        style={{
+          clipPath: hovered
+            ? "circle(60px at center 90px)"
+            : "circle(400px at center 90px)",
+          transition: "clip-path 0.7s cubic-bezier(0.4, 0, 0.2, 1)",
+        }}
+      >
+        <Image
+          src={service.src}
+          alt={service.alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          unoptimized
+        />
+      </div>
+
+      {/* Content */}
+      <div className="absolute left-0 bottom-0 w-full h-[54%] p-4 flex flex-col items-center justify-center text-center text-white box-border z-10">
+        <h3
+          className="font-['Bebas_Neue'] text-white text-xl lg:text-2xl tracking-wider leading-tight mb-2"
+          style={{
+            opacity: hovered ? 1 : 0,
+            transform: hovered ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s",
+          }}
+        >
+          {service.title}
+        </h3>
+        <p
+          className="font-['DM_Sans'] text-white/75 text-[11px] lg:text-[13px] leading-relaxed mb-4"
+          style={{
+            opacity: hovered ? 1 : 0,
+            transform: hovered ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s",
+          }}
+        >
+          {service.description}
+        </p>
+        <Link
+          href={service.href}
+          style={{
+            opacity: hovered ? 1 : 0,
+            transform: hovered ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s",
+          }}
+          className="font-['DM_Sans'] text-[11px] lg:text-sm font-bold tracking-[0.2em] uppercase text-[#1c1c1c] bg-[#f5f5f5] px-5 py-2.5 rounded-full hover:bg-white"
+        >
+          Read More
+        </Link>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Services() {
   const ref = useRef(null);
@@ -70,7 +146,7 @@ export default function Services() {
     <section
       id="services"
       ref={ref}
-      className="bg-[#0f0f0f] py-24 px-6 lg:px-12 min-h-screen flex flex-col justify-center"
+      className="bg-[#0f0f0f] py-24 px-4 sm:px-6 lg:px-12 min-h-screen flex flex-col justify-center"
     >
       <div className="max-w-7xl mx-auto w-full">
 
@@ -92,96 +168,25 @@ export default function Services() {
               initial={{ y: "100%" }}
               animate={inView ? { y: 0 } : {}}
               transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-              className="font-['Bebas_Neue'] text-white text-[13vw] lg:text-[7vw] leading-none tracking-wide"
+              className="font-['Bebas_Neue'] text-white text-[15vw] sm:text-[13vw] lg:text-[7vw] leading-none tracking-wide"
             >
               OUR SERVICES
             </motion.h2>
           </div>
         </div>
 
-        {/* Cards grid — 3 cols desktop, 2 cols mobile */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 lg:gap-3">
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 lg:gap-3">
           {services.map((service, i) => (
-            <motion.div
+            <ServiceCard
               key={service.id}
-              initial={{ opacity: 0, y: 28 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                delay: 0.08 * i,
-                duration: 0.65,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="group relative w-full h-[380px] lg:h-[400px] overflow-hidden bg-[#222] shadow-[1px_1px_5px_#111] cursor-pointer"
-            >
-              {/* Image with clip-path animation */}
-              {/* On idle: full circle (image fills card). On hover: shrinks to a small circle at top */}
-              <div
-                className="absolute inset-0 bg-black transition-all duration-500 delay-500 group-hover:delay-0"
-                style={{
-                  clipPath: "circle(400px at center 90px)",
-                }}
-                // Tailwind can't animate custom clip-path — we use inline style + group via CSS below
-              >
-                {/* We control clip-path via a scoped CSS class injected below */}
-              </div>
-
-              {/* We replicate the exact clip-path trick using a wrapper with [&]:group-hover trick via style tag approach */}
-              {/* The cleanest way in Next.js + Tailwind is a small <style> tag or CSS module — we inline it per card via a data attribute */}
-              <div
-                data-card
-                className="service-image-box absolute inset-0 bg-black"
-              >
-                <Image
-                  src={service.src}
-                  alt={service.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  unoptimized
-                />
-              </div>
-
-              {/* Content — shown on hover */}
-              <div className="absolute left-0 bottom-0 w-full h-[54%] p-4 flex flex-col items-center justify-center text-center text-white box-border">
-                <h3 className="font-['Bebas_Neue'] text-white text-xl lg:text-2xl tracking-wider leading-tight mb-2 opacity-0 translate-y-5 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 group-hover:[transition-delay:500ms]">
-                  {service.title}
-                </h3>
-                <p className="font-['DM_Sans'] text-white/65 text-[11px] lg:text-[13px] leading-relaxed mb-4 opacity-0 translate-y-5 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 group-hover:[transition-delay:700ms]">
-                  {service.description}
-                </p>
-                <Link
-                  href={service.href}
-                  className="font-['DM_Sans'] text-[11px] lg:text-sm font-bold tracking-[0.2em] uppercase text-[#1c1c1c] bg-[#f5f5f5] px-5 py-2.5 rounded-full opacity-0 translate-y-5 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 group-hover:[transition-delay:100ms] hover:bg-white"
-                >
-                  Read More
-                </Link>
-              </div>
-            </motion.div>
+              service={service}
+              index={i}
+              inView={inView}
+            />
           ))}
         </div>
       </div>
-
-      {/* Global style for the clip-path animation — scoped to .service-image-box */}
-      <style jsx global>{`
-        .service-image-box {
-          clip-path: circle(400px at center 90px);
-          transition: clip-path 0.5s ease;
-          transition-delay: 0.5s;
-        }
-        .group:hover .service-image-box {
-          clip-path: circle(65px at center 90px);
-          transition-delay: 0s;
-        }
-
-        @media (max-width: 767px) {
-          .service-image-box {
-            clip-path: circle(360px at center 80px);
-          }
-          .group:hover .service-image-box {
-            clip-path: circle(55px at center 80px);
-          }
-        }
-      `}</style>
     </section>
   );
 }

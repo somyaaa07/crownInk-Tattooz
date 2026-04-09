@@ -18,20 +18,20 @@ export default function SectionWrapper({
 
   const headingClass =
     headingSize === "xl"
-      ? "text-[12vw] lg:text-[7vw]"
+      ? "text-[14vw] sm:text-[12vw] lg:text-[7vw]"
       : headingSize === "lg"
-      ? "text-[11vw] lg:text-[6vw]"
-      : "text-[9vw] lg:text-[5vw]";
+      ? "text-[13vw] sm:text-[11vw] lg:text-[6vw]"
+      : "text-[11vw] sm:text-[9vw] lg:text-[5vw]";
 
   return (
     <section
       id={id}
       ref={ref}
-      className={`py-24 px-6 lg:px-12 ${className}`}
+      className={`py-16 sm:py-24 px-4 sm:px-6 lg:px-12 ${className}`}
     >
       <div className={`max-w-7xl mx-auto w-full ${centered ? "text-center" : ""}`}>
         {(label || heading) && (
-          <div className={`mb-14 ${centered ? "flex flex-col items-center" : ""}`}>
+          <div className={`mb-10 sm:mb-14 ${centered ? "flex flex-col items-center" : ""}`}>
             {label && (
               <motion.div
                 initial={{ opacity: 0, x: centered ? 0 : -16 }}

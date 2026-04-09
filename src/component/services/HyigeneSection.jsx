@@ -18,14 +18,15 @@ export default function HygieneSection() {
       label="Your Safety First"
       heading="HYGIENE & SAFETY"
     >
-      <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* CHANGED: gap-10 sm:gap-16 — tighter gap stacking on mobile */}
+      <div ref={ref} className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
         {/* Left — text */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65 }}
         >
-          <p className="font-['DM_Sans'] text-white/50 text-sm leading-relaxed mb-10">
+          <p className="font-['DM_Sans'] text-white/50 text-lg leading-relaxed mb-8 sm:mb-10">
             Safety isn't optional — it's the foundation. Our studio meets and
             exceeds all health authority standards. Every session is conducted
             in a fully sterile environment by trained professionals.
@@ -55,8 +56,10 @@ export default function HygieneSection() {
           className="relative"
         >
           {/* Big stat */}
-          <div className="bg-[#1a1a1a] border border-white/5 p-12 text-center mb-4">
-            <p className="font-['Bebas_Neue'] text-white text-[8rem] leading-none tracking-wide mb-2">
+          {/* CHANGED: p-8 sm:p-12 — less padding on mobile so the big number fits */}
+          <div className="bg-[#1a1a1a] border border-white/5 p-8 sm:p-12 text-center mb-4">
+            {/* CHANGED: text-[5rem] sm:text-[7rem] lg:text-[8rem] — scale down on mobile to prevent overflow */}
+            <p className="font-['Bebas_Neue'] text-white text-[5rem] sm:text-[7rem] lg:text-[8rem] leading-none tracking-wide mb-2">
               100%
             </p>
             <p className="font-['DM_Sans'] text-white/40 text-sm tracking-[0.3em] uppercase font-semibold">
@@ -68,8 +71,9 @@ export default function HygieneSection() {
               { val: "10+", label: "Years Licensed" },
               { val: "0", label: "Safety Incidents" },
             ].map((s) => (
-              <div key={s.label} className="bg-[#1a1a1a] border border-white/5 p-6 text-center">
-                <p className="font-['Bebas_Neue'] text-white text-5xl leading-none mb-1">{s.val}</p>
+              <div key={s.label} className="bg-[#1a1a1a] border border-white/5 p-5 sm:p-6 text-center">
+                {/* CHANGED: text-4xl sm:text-5xl — slightly smaller on small screens */}
+                <p className="font-['Bebas_Neue'] text-white text-4xl sm:text-5xl leading-none mb-1">{s.val}</p>
                 <p className="font-['DM_Sans'] text-white/30 text-[10px] tracking-[0.35em] uppercase font-semibold">{s.label}</p>
               </div>
             ))}

@@ -39,7 +39,7 @@ export default function PricingSection() {
               <p className="font-['Bebas_Neue'] text-white text-3xl tracking-wider leading-none mb-2">
                 {tier.range}
               </p>
-              <p className="font-['DM_Sans'] text-white/30 text-[11px] leading-snug mt-3 pt-4 border-t border-white/8">
+              <p className="font-['DM_Sans'] text-white/30 text-[16px] leading-snug mt-3 pt-4 border-t border-white/8">
                 {tier.note}
               </p>
             </div>
@@ -55,7 +55,7 @@ export default function PricingSection() {
         className="bg-[#1a1a1a] border border-white/5 p-6 flex items-start gap-4"
       >
         <div className="w-1 h-full min-h-[20px] bg-[#f5f5f5]/20 shrink-0 rounded-full" />
-        <p className="font-['DM_Sans'] text-white/35 text-xs leading-relaxed">
+        <p className="font-['DM_Sans'] text-white/35 text-md leading-relaxed">
           All prices are estimates only. Final quotes depend on size, complexity,
           placement, and number of sessions. A ₹1,500 deposit is required to
           confirm your booking. Deposits are non-refundable but transferable

@@ -1,5 +1,5 @@
 // app/about/page.jsx
-"use client"; // Needed because we are using useRef, useInView
+"use client";
 
 import { useRef } from "react";
 import Image from "next/image";
@@ -36,7 +36,8 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className={`${dmSans.className} bg-[#111] py-16 px-8 overflow-hidden`}
+      // CHANGED: px-4 sm:px-8 — safer side padding on mobile
+      className={`${dmSans.className} bg-[#111] py-16 px-4 sm:px-8 overflow-hidden`}
     >
       <div className="max-w-[1200px] mx-auto">
 
@@ -45,7 +46,7 @@ export default function About() {
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-4 mb-14"
+          className="flex items-center gap-4 mb-10 sm:mb-14"
         >
           <span className={`${spaceMono.className} text-[10px] text-white/30 tracking-widest uppercase whitespace-nowrap`}>
             02 — Our Philosophy
@@ -54,16 +55,18 @@ export default function About() {
         </motion.div>
 
         {/* Main grid */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        {/* CHANGED: gap-10 md:gap-12 — slightly tighter gap on tablet */}
+        <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-start">
 
           {/* LEFT: Image */}
           <motion.div
             initial={{ opacity: 0, x: -32 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative"
+            className="relative sm:order-2 order-2 lg:order-1 xl:order-1 md:order-1"
           >
-            <div className="relative w-full aspect-[3/4] overflow-hidden">
+            {/* CHANGED: aspect-[4/5] sm:aspect-[3/4] — slightly less tall on small screens */}
+            <div className="relative w-full aspect-[3/3] sm:aspect-[3/3] md:aspect-[3/8] lg:aspect-[3/5] xl:aspect-[3/4] overflow-hidden ">
               <Image
                 src="https://images.unsplash.com/photo-1758404255679-9afd847ede1c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Tattoo artist at work"
@@ -74,13 +77,14 @@ export default function About() {
             </div>
 
             {/* Stat card */}
+            {/* CHANGED: -right-2 sm:-right-4 — prevent card from clipping off screen on mobile */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="absolute bottom-6 -right-4 bg-[#111] border border-white/12 p-5"
+              className="absolute bottom-6 -right-2 sm:-right-4 bg-[#111] border border-white/12 p-4 sm:p-5"
             >
-              <p className={`${bebasNeue.className} text-white text-[48px] leading-none`}>8+</p>
+              <p className={`${bebasNeue.className} text-white text-[40px] sm:text-[48px] leading-none`}>8+</p>
               <p className={`${spaceMono.className} text-white/35 text-[9px] tracking-widest uppercase mt-1`}>
                 Years in Ink
               </p>
@@ -88,7 +92,7 @@ export default function About() {
           </motion.div>
 
           {/* RIGHT: Content */}
-          <div className="flex flex-col">
+          <div className="flex flex-col sm:order-1 order-1 lg:order-2 xl:order-2 md:order-2">
 
             {/* Heading */}
             <div className="overflow-hidden mb-1">
@@ -96,9 +100,9 @@ export default function About() {
                 initial={{ y: "110%" }}
                 animate={inView ? { y: 0 } : {}}
                 transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-                className={`${bebasNeue.className} text-white text-[clamp(52px,7vw,80px)] leading-[0.92] tracking-[0.02em] mb-7`}
+                className={`${bebasNeue.className} text-white text-[clamp(44px,7vw,80px)] leading-[0.92] tracking-[0.02em] mb-7`}
               >
-                WHERE SKIN<br />BECOMES<br />CANVAS
+                WHERE SKIN<br />BECOMES CANVAS <br />
               </motion.h2>
             </div>
 
@@ -106,7 +110,8 @@ export default function About() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-white/45 text-sm leading-[1.75] max-w-[340px] mb-10"
+              // CHANGED: max-w-full md:max-w-[340px] — use full width on mobile
+              className="text-white/45 text-sm leading-[1.8] max-w-full md:max-w-[400px] mb-10"
             >
               crowninkwell Studio was born from a passion for permanent art. Based in New Delhi,
               we bring together artists who believe every tattoo is a lifelong conversation
@@ -146,9 +151,10 @@ export default function About() {
               transition={{ delay: 0.75, duration: 0.6 }}
               className="mt-10"
             >
+              {/* CHANGED: w-full sm:w-auto justify-center sm:justify-start — full width tap target on mobile */}
               <a
                 href="#contact"
-                className={`${spaceMono.className} inline-flex items-center gap-3 border border-white/20 px-7 py-3 text-white text-[10px] tracking-widest uppercase transition-colors`}
+                className={`${spaceMono.className} inline-flex items-center justify-center sm:justify-start w-full sm:w-auto gap-3 border border-white/20 px-7 py-3 text-white text-[10px] tracking-widest uppercase transition-colors`}
                 onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#111"; }}
                 onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}
               >

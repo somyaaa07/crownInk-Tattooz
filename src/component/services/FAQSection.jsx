@@ -18,7 +18,8 @@ export default function FAQSection() {
       label="Got Questions"
       heading="FAQ"
     >
-      <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-start">
+      {/* CHANGED: gap-10 sm:gap-16 — tighter gap on mobile stack */}
+      <div ref={ref} className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-start">
         {/* Left — intro */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,14 +27,14 @@ export default function FAQSection() {
           transition={{ duration: 0.65 }}
           className="lg:sticky lg:top-24"
         >
-          <p className="font-['DM_Sans'] text-white/45 text-sm leading-relaxed mb-8">
+          <p className="font-['DM_Sans'] text-white/45 text-xl leading-relaxed mb-8">
             Everything you need to know before booking. Don't see your question
             here? Drop us a message — we're always happy to help.
           </p>
 
           {/* Visual stat block */}
-          <div className="bg-[#1a1a1a] border border-white/5 p-8">
-            <p className="font-['Bebas_Neue'] text-white text-6xl leading-none tracking-wide">2500+</p>
+          <div className="bg-[#1a1a1a] border border-white/5 p-6 sm:p-8">
+            <p className="font-['Bebas_Neue'] text-white text-5xl sm:text-6xl leading-none tracking-wide">2500+</p>
             <p className="font-['DM_Sans'] text-white/30 text-[10px] tracking-[0.4em] uppercase mt-1 font-semibold">Happy Clients</p>
           </div>
         </motion.div>

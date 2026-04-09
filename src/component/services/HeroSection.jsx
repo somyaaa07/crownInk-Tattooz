@@ -30,20 +30,18 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Decorative vertical lines */}
-
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full ">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-2 lg:px-12 md:px-6  py-10 sm:py-12  w-full">
 
         {/* Label */}
         <motion.div
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="flex items-center gap-3 mb-8"
+          className="flex items-center gap-3 mb-4 sm:mb-5"
         >
           <div className="h-px w-8 bg-white/30" />
-          <span className="font-['DM_Sans'] text-white/40 text-[10px] tracking-[0.5em] uppercase font-semibold">
+          <span className="font-['DM_Sans'] text-white/40 text-[9px] sm:text-[10px] tracking-[0.5em] uppercase font-semibold ">
             crowninkwell Studio · New Delhi
           </span>
         </motion.div>
@@ -54,17 +52,17 @@ export default function HeroSection() {
             initial={{ y: "110%" }}
             animate={{ y: 0 }}
             transition={{ delay: 0.5, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="font-['Bebas_Neue'] text-white text-[18vw] lg:text-[12vw] leading-[0.9] tracking-wide"
+            className="font-['Bebas_Neue'] text-white text-[22vw] sm:text-[18vw] lg:text-[12vw] leading-[0.9] tracking-wide"
           >
-            OUR 
+            OUR
           </motion.h1>
         </div>
-        <div className="overflow-hidden mb-8">
+        <div className="overflow-hidden mb-6 sm:mb-8">
           <motion.h1
             initial={{ y: "110%" }}
             animate={{ y: 0 }}
             transition={{ delay: 0.62, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="font-['Bebas_Neue'] text-transparent text-[12vw] lg:text-[9vw] leading-[0.9] tracking-wide"
+            className="font-['Bebas_Neue'] text-transparent text-[16vw] sm:text-[12vw] lg:text-[9vw] leading-[0.9] tracking-wide"
             style={{ WebkitTextStroke: "2px rgba(245,245,245,0.7)" }}
           >
             SERVICES
@@ -76,7 +74,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.7 }}
-          className="font-['DM_Sans'] text-white/45 text-sm lg:text-base leading-relaxed max-w-md mb-10"
+          className="font-['DM_Sans'] text-white/45 text-sm lg:text-base leading-relaxed max-w-sm sm:max-w-md mb-8 sm:mb-10"
         >
           From delicate fine-line florals to bold full sleeves — every piece is
           custom crafted, never templated.
@@ -87,37 +85,24 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.7 }}
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4"
         >
           <Link
             href="#contact"
-            className="inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-10 py-4 hover:bg-white transition-colors duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-8 sm:px-10 py-4 hover:bg-white transition-colors duration-300"
           >
             Book Appointment <MoveRight size={14} />
           </Link>
           <Link
             href="#services-grid"
-            className="inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-white border border-white/25 px-10 py-4 hover:border-white/60 hover:bg-white/5 transition-all duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-white border border-white/25 px-8 sm:px-10 py-4 hover:border-white/60 hover:bg-white/5 transition-all duration-300"
           >
             View Services
           </Link>
         </motion.div>
       </div>
 
-      {/* Scroll arrow */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-        >
-          <ArrowDown size={18} className="text-white/25" />
-        </motion.div>
-      </motion.div>
+  
     </section>
   );
 }

@@ -18,17 +18,17 @@ export default function ServiceDetails() {
       label="Detailed Breakdown"
       heading="SERVICE DETAILS"
     >
-      <div ref={ref} className="grid lg:grid-cols-3 gap-4">
+      <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {serviceDetails.map((detail, i) => (
           <motion.div
             key={detail.id}
             initial={{ opacity: 0, y: 28 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.12 * i, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-[#1a1a1a] p-8 border border-white/5 hover:border-white/15 transition-colors duration-300 group"
+            className="bg-[#1a1a1a] p-6 sm:p-8 border border-white/5 hover:border-white/15 transition-colors duration-300 group"
           >
             {/* Number */}
-            <span className="font-['Bebas_Neue'] text-white/10 text-7xl leading-none block mb-6 group-hover:text-white/15 transition-colors">
+            <span className="font-['Bebas_Neue'] text-white/10 text-6xl sm:text-7xl leading-none block mb-6 group-hover:text-white/15 transition-colors">
               {String(i + 1).padStart(2, "0")}
             </span>
 

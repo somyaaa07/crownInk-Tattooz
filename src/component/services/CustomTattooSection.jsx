@@ -20,33 +20,31 @@ export default function CustomTattooSection() {
       label="Tailored For You"
       heading="CUSTOM TATTOOS"
     >
-      <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-        {/* Left */}
+      <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-14 sm:mb-20">
         <motion.div
           initial={{ opacity: 0, x: -24 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7 }}
           ref={ref}
         >
-          <p className="font-['DM_Sans'] text-white/50 text-sm lg:text-base leading-relaxed mb-8">
+          <p className="font-['DM_Sans'] text-white/50 text-md lg:text-md leading-relaxed mb-8">
             No two people are the same — and neither are our tattoos. Every custom
             piece starts with a conversation and ends with something that's
             uniquely, permanently yours.
           </p>
           <Link
             href="#contact"
-            className="inline-flex items-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-8 py-4 hover:bg-white transition-colors duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-8 py-4 hover:bg-white transition-colors duration-300"
           >
             Start Your Design <MoveRight size={14} />
           </Link>
         </motion.div>
 
-        {/* Right — image */}
         <motion.div
           initial={{ opacity: 0, x: 24 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="relative h-80 lg:h-96 overflow-hidden"
+          className="relative h-64 sm:h-80 lg:h-96 overflow-hidden"
         >
           <Image
             src="https://images.unsplash.com/photo-1543137765-49b96880eb59?w=800&q=80"
@@ -59,7 +57,6 @@ export default function CustomTattooSection() {
         </motion.div>
       </div>
 
-      {/* 3-step process */}
       <div className="grid md:grid-cols-3 gap-4">
         {processSteps.map((step, i) => (
           <motion.div
@@ -67,9 +64,8 @@ export default function CustomTattooSection() {
             initial={{ opacity: 0, y: 28 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 * i + 0.2, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="relative bg-[#1a1a1a] p-8 border border-white/5 group hover:border-white/15 transition-colors duration-300"
+            className="relative bg-[#1a1a1a] p-6 sm:p-8 border border-white/5 group hover:border-white/15 transition-colors duration-300"
           >
-            {/* Step number watermark */}
             <span className="absolute top-4 right-6 font-['Bebas_Neue'] text-white/5 text-6xl leading-none select-none">
               {step.step}
             </span>
@@ -78,11 +74,10 @@ export default function CustomTattooSection() {
             <h4 className="font-['Bebas_Neue'] text-white text-2xl tracking-wider leading-none mb-3">
               {step.title}
             </h4>
-            <p className="font-['DM_Sans'] text-white/45 text-sm leading-relaxed">
+            <p className="font-['DM_Sans'] text-white/45 text-lg leading-relaxed">
               {step.description}
             </p>
 
-            {/* Connector line — desktop only */}
             {i < processSteps.length - 1 && (
               <div className="hidden md:block absolute -right-2 top-1/2 w-4 h-px bg-white/15 z-10" />
             )}

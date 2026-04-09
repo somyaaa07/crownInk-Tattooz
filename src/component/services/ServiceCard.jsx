@@ -11,13 +11,14 @@ export default function ServiceCard({ service, index = 0 }) {
       style={{ animationDelay: `${index * 80}ms` }}
     >
       {/* Image */}
-      <div className="relative h-74 overflow-hidden">
+      {/* CHANGED: h-56 sm:h-64 md:h-72 — shorter on small screens, grows proportionally */}
+      <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden">
         <Image
           src={service.src}
           alt={service.alt}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-108"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent" />
@@ -29,7 +30,8 @@ export default function ServiceCard({ service, index = 0 }) {
       </div>
 
       {/* Body */}
-      <div className="p-6">
+      {/* CHANGED: p-5 sm:p-6 — slightly less padding on small cards */}
+      <div className="p-5 sm:p-6">
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
           {service.tags.map((tag) => (

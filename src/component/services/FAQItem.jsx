@@ -11,14 +11,14 @@ export default function FAQItem({ q, a, index = 0 }) {
     <div className="border-b border-white/8 last:border-0">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-6 text-left group"
+        className="w-full flex items-center justify-between py-5 sm:py-6 text-left group"
         aria-expanded={open}
       >
-        <div className="flex items-start gap-5 pr-6">
+        <div className="flex items-start gap-4 sm:gap-5 pr-4 sm:pr-6">
           <span className="font-['Bebas_Neue'] text-white/20 text-lg tracking-wider shrink-0 mt-0.5">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <span className="font-['Bebas_Neue'] text-white text-xl lg:text-2xl tracking-wider leading-tight group-hover:text-[#f5f5f5] transition-colors">
+          <span className="font-['Bebas_Neue'] text-white text-lg sm:text-xl lg:text-2xl tracking-wider leading-tight group-hover:text-[#f5f5f5] transition-colors">
             {q}
           </span>
         </div>
@@ -29,10 +29,10 @@ export default function FAQItem({ q, a, index = 0 }) {
 
       <div
         className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          open ? "max-h-48 pb-6" : "max-h-0"
+          open ? "max-h-64 sm:max-h-48 pb-5 sm:pb-6" : "max-h-0"
         }`}
       >
-        <p className="font-['DM_Sans'] text-white/50 text-sm leading-relaxed pl-12">
+        <p className="font-['DM_Sans'] text-white/50 text-lg leading-relaxed pl-9 sm:pl-12">
           {a}
         </p>
       </div>

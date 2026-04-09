@@ -19,7 +19,6 @@ export default function Hero() {
           priority
           className="object-cover object-center"
         />
-        {/* Dark gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f0f0f] via-[#0f0f0f]/70 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-[#0f0f0f]/40" />
       </div>
@@ -39,14 +38,16 @@ export default function Hero() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="relative z-10 flex items-center justify-between px-6 lg:px-12 pt-8"
+        // CHANGED: px-4 sm:px-6 lg:px-12 — tighter padding on small screens
+        className="relative z-10 flex items-center justify-between px-4 sm:px-6 lg:px-12 pt-8"
       >
-      
       </motion.div>
 
       {/* Main content */}
-      <div className="relative z-10 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-6 lg:px-12 pb-16 w-full mt-30">
-        <div className="max-w-3xl">
+      {/* CHANGED: px-4 sm:px-6 lg:px-12 pb-10 sm:pb-16 — safer padding on mobile */}
+      <div className="relative z-10 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-16 w-full mt-20 sm:mt-30">
+        {/* CHANGED: max-w-full sm:max-w-xl lg:max-w-3xl — text block uses full width on mobile */}
+        <div className="max-w-full sm:max-w-xl lg:max-w-3xl">
 
           {/* Label */}
           <motion.div
@@ -56,12 +57,13 @@ export default function Hero() {
             className="flex items-center gap-3 mb-6"
           >
             <div className="h-px w-8 bg-white/40" />
-            <span className="font-['DM_Sans'] text-white/40 text-[11px] tracking-[0.5em] uppercase font-medium">
+            {/* CHANGED: text-[9px] sm:text-[11px] — slightly smaller label on mobile */}
+            <span className="font-['DM_Sans'] text-white/40 text-[9px] sm:text-[11px] tracking-[0.5em] uppercase font-medium">
               Premium Tattoo Studio · New Delhi
             </span>
           </motion.div>
 
-          {/* Heading */}
+          {/* Heading — vw-based sizing already scales naturally, no change needed */}
           <div className="overflow-hidden mb-2">
             <motion.h1
               initial={{ y: "110%" }}
@@ -84,12 +86,13 @@ export default function Hero() {
             </motion.h1>
           </div>
 
-          {/* Divider + description */}
+          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0, duration: 0.7 }}
-            className="font-['DM_Sans'] text-white/50 text-sm leading-relaxed max-w-sm mb-10 tracking-wide"
+            // CHANGED: max-w-full sm:max-w-sm — no artificial cap on mobile
+            className="font-['DM_Sans'] text-white/50 text-sm leading-relaxed max-w-full sm:max-w-sm mb-10 tracking-wide"
           >
             Custom tattoo artistry crafted for permanence. Each piece is
             designed with intention — no flash, no templates.
@@ -100,29 +103,31 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4"
+            // CHANGED: gap-3 sm:gap-4 — tighter gap on mobile
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
+            {/* CHANGED: w-full sm:w-auto px-6 sm:px-10 — full-width buttons on mobile */}
             <a
               href="#gallery"
-              className="inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-semibold text-[#0f0f0f] bg-white px-10 py-4 hover:bg-white/85 transition-colors duration-300"
+              className="inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-semibold text-[#0f0f0f] bg-white w-full sm:w-auto px-6 sm:px-10 py-4 hover:bg-white/85 transition-colors duration-300"
             >
               View Gallery <MoveRight size={14} />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-semibold text-white border border-white/30 px-10 py-4 hover:border-white/70 hover:bg-white/5 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-semibold text-white border border-white/30 w-full sm:w-auto px-6 sm:px-10 py-4 hover:border-white/70 hover:bg-white/5 transition-all duration-300"
             >
               Book a Session
             </a>
           </motion.div>
         </div>
 
-        {/* Stats row */}
+        {/* Stats row — hidden on mobile/tablet, shown lg+ (unchanged) */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3, duration: 0.7 }}
-          className="hidden lg:flex items-end gap-0 mt-16 border-t border-white/10 pt-8 w-full"
+          className="hidden lg:flex items-end gap-0 mt-16  pt-8 w-full"
         >
           {[
             { number: "2500+", label: "Tattoos Done" },
@@ -143,22 +148,11 @@ export default function Hero() {
             </div>
           ))}
 
-          {/* Spacer + scroll hint */}
-          <div className="ml-auto flex items-center gap-3 pb-1">
-            <motion.div
-              animate={{ x: [0, 6, 0] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            >
-              <ArrowDownRight size={20} className="text-white/20" />
-            </motion.div>
-            <span className="font-['DM_Sans'] text-white/25 text-[10px] tracking-[0.4em] uppercase">
-              Scroll
-            </span>
-          </div>
+        
         </motion.div>
       </div>
 
-      {/* Right-edge vertical text */}
+      {/* Right-edge vertical text — xl+ only (unchanged) */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -25,7 +25,8 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="contact" ref={ref} className="bg-[#141414] py-24 px-6 lg:px-12">
+    // CHANGED: px-4 sm:px-6 lg:px-12 — consistent section padding
+    <section id="contact" ref={ref} className="bg-[#141414] py-24 px-4 sm:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -47,14 +48,16 @@ export default function Contact() {
               initial={{ y: "100%" }}
               animate={inView ? { y: 0 } : {}}
               transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-              className="font-['Bebas_Neue'] text-white text-[12vw] lg:text-[6.5vw] leading-none tracking-wide"
+              // CHANGED: text-[13vw] sm:text-[12vw] lg:text-[6.5vw] — prevent overflow on small phones
+              className="font-['Bebas_Neue'] text-white text-[13vw] sm:text-[12vw] lg:text-[6.5vw] leading-none tracking-wide"
             >
               LET'S CREATE TOGETHER
             </motion.h2>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-20">
+        {/* CHANGED: gap-10 lg:gap-20 — tighter gap on mid sizes */}
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-20">
 
           {/* Left — Form (3 cols) */}
           <motion.div
@@ -63,7 +66,8 @@ export default function Contact() {
             transition={{ delay: 0.25, duration: 0.7 }}
             className="lg:col-span-3 space-y-5"
           >
-            <div className="grid sm:grid-cols-2 gap-5">
+            {/* CHANGED: grid-cols-1 sm:grid-cols-2 — stack name/email on very small screens */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {[
                 { label: "Name", type: "text", placeholder: "Your name" },
                 { label: "Email", type: "email", placeholder: "your@email.com" },
@@ -121,7 +125,11 @@ export default function Contact() {
             transition={{ delay: 0.4, duration: 0.7 }}
             className="lg:col-span-2 flex flex-col justify-between gap-10"
           >
-            <div className="space-y-8 border-l border-white/8 pl-8">
+            {/*
+              CHANGED: border-l removed on mobile, added sm:border-l sm:pl-8
+              — On mobile info stacks naturally without the left border cutting into padding
+            */}
+            <div className="space-y-8 sm:border-l border-white/8 sm:pl-8">
               {info.map((item) => (
                 <div key={item.label} className="flex gap-5 items-start">
                   <item.icon size={15} className="text-white/30 mt-0.5 shrink-0" />

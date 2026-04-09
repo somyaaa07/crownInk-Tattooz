@@ -6,7 +6,6 @@ import Image from "next/image";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa6";
 
-
 const artists = [
   {
     name: "Arjun Mehta",
@@ -43,7 +42,8 @@ export default function Artists() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="artists" ref={ref} className="bg-[#0f0f0f] py-24 px-6 lg:px-12">
+    // CHANGED: px-4 sm:px-6 lg:px-12 — consistent padding scale across breakpoints
+    <section id="artists" ref={ref} className="bg-[#0f0f0f] py-24 px-4 sm:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -65,7 +65,8 @@ export default function Artists() {
                 initial={{ y: "100%" }}
                 animate={inView ? { y: 0 } : {}}
                 transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-                className="font-['Bebas_Neue'] text-white text-[13vw] lg:text-[7vw] leading-none tracking-wide"
+                // CHANGED: text-[15vw] sm:text-[13vw] lg:text-[7vw] — tighter on very small screens
+                className="font-['Bebas_Neue'] text-white text-[15vw] sm:text-[13vw] lg:text-[7vw] leading-none tracking-wide"
               >
                 OUR ARTISTS
               </motion.h2>
@@ -83,7 +84,8 @@ export default function Artists() {
         </div>
 
         {/* Artists grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+        {/* CHANGED: grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 — single column on very small phones */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
           {artists.map((artist, i) => (
             <motion.div
               key={artist.name}
@@ -93,6 +95,7 @@ export default function Artists() {
               className="group relative"
             >
               {/* Image container */}
+              {/* CHANGED: aspect-[3/4] sm:aspect-[3/4] — consistent; added max-h for single-col mobile */}
               <div className="relative overflow-hidden aspect-[3/4] bg-[#1a1a1a] mb-4">
                 <Image
                   src={artist.src}
@@ -115,7 +118,7 @@ export default function Artists() {
                 {/* Hover CTA */}
                 <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
                   <button className="font-['DM_Sans'] text-[10px] tracking-[0.3em] uppercase font-bold text-white border border-white/50 px-6 py-3 hover:bg-white hover:text-black transition-colors duration-300 flex items-center gap-2">
-                    View Work <BsArrowUpRightCircleFill  size={12} />
+                    View Work <BsArrowUpRightCircleFill size={12} />
                   </button>
                 </div>
 

@@ -28,7 +28,7 @@ export default function CoverUpSection() {
           className="relative h-[300px] sm:h-[360px] lg:h-[420px] overflow-hidden group"
         >
           <Image
-            src="https://images.unsplash.com/photo-1562409822-3bb5e5e2dbdc?w=800&q=80"
+            src="/cover-up/1.png"
             alt="Before cover-up tattoo"
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale"
@@ -50,7 +50,7 @@ export default function CoverUpSection() {
           className="relative h-[300px] sm:h-[360px] lg:h-[420px] overflow-hidden group"
         >
           <Image
-            src="https://images.unsplash.com/photo-1542727365-19732a80dcfd?w=800&q=80"
+            src="/cover-up/2.png"
             alt="After cover-up tattoo"
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"

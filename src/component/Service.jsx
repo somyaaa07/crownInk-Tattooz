@@ -12,7 +12,7 @@ const services = [
     description:
       "Capture the essence of a loved one or icons. Our artists skillfully recreate faces with stunning accuracy and emotion.",
     href: "/services",
-    src: "/photos/image77.jpeg",
+    src: "/photos/image58.jpg",
     alt: "Portrait tattoo Post Malone",
   },
   {
@@ -21,7 +21,7 @@ const services = [
     description:
       "Delicate and detailed, intricate designs with a subtle touch. Ideal for elegant and intricate ink.",
     href: "/services",
-    src: "/photos/image10.jpeg",
+    src: "/photos/image24.jpg",
     alt: "Fine line tattoo flowers",
   },
   {
@@ -30,7 +30,7 @@ const services = [
     description:
       "Blend symmetry and creativity. Perfect for abstract patterns and shapes that make a striking statement.",
     href: "/services",
-    src: "/photos/image40.jpeg",
+    src: "/photos/image18.jpg",
     alt: "Geometric camera tattoo",
   },
   {
@@ -39,7 +39,7 @@ const services = [
     description:
       "Expert detail in small packages. Ideal for lifelike representations of your favorite images.",
     href: "/services",
-    src: "/photos/image16.jpeg",
+    src: "/photos/image25.jpg",
     alt: "Micro realism dog tattoo",
   },
   {
@@ -57,7 +57,7 @@ const services = [
     description:
       "From nature scenes to detailed objects, experience tattoos that look almost real.",
     href: "/services",
-    src: "/photos/image73.jpeg",
+    src: "/photos/image54.jpg",
     alt: "Realistic tiger tattoo",
   },
 ];

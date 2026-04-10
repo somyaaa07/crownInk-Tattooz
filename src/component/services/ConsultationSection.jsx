@@ -48,7 +48,7 @@ export default function ConsultationSection() {
           </ul>
 
           <Link
-            href="#contact"
+            href="/contact"
           
             className="w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-8 py-4 hover:bg-white transition-colors duration-300"
           >
@@ -65,7 +65,7 @@ export default function ConsultationSection() {
       className="relative h-72 sm:h-80 lg:h-[460px] overflow-hidden"
         >
           <Image
-            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=80"
+            src="/photos/image71.jpeg"
             alt="Tattoo consultation"
             fill
             className="object-cover object-top"

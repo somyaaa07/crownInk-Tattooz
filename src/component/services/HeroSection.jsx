@@ -100,7 +100,7 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row gap-3 sm:gap-4"
         >
           <Link
-            href="#contact"
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-8 sm:px-10 py-4 hover:bg-white transition-colors duration-300"
           >
             Book Appointment <MoveRight size={14} />

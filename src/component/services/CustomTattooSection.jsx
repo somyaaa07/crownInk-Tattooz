@@ -33,7 +33,7 @@ export default function CustomTattooSection() {
             uniquely, permanently yours.
           </p>
           <Link
-            href="#contact"
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-8 py-4 hover:bg-white transition-colors duration-300"
           >
             Start Your Design <MoveRight size={14} />

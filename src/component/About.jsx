@@ -122,7 +122,7 @@ export default function About() {
               className="text-white/45 text-sm leading-[1.8] max-w-full md:max-w-[400px] mb-10"
             >
               crowninkwell Studio was born from a passion for permanent art.
-              Based in New Delhi, we bring together artists who believe every
+              Based in Greater Noida, we bring together artists who believe every
               tattoo is a lifelong conversation between the wearer and the
               world.
             </motion.p>

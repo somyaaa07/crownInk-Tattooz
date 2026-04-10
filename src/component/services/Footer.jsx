@@ -119,7 +119,7 @@ export default function Footer() {
         naturally scales — just needs overflow clipping.
       */}
       <div className="overflow-x-hidden mb-12 border-b border-white/5 pb-12">
-        <p className="font-['Bebas_Neue'] text-white/[0.04] text-[14vw] leading-none tracking-widest select-none pointer-events-none whitespace-nowrap">
+        <p className="font-['Bebas_Neue'] text-white/[0.04] text-[21vw] leading-none tracking-widest select-none pointer-events-none whitespace-nowrap">
           CROWN INK
         </p>
       </div>
@@ -130,7 +130,7 @@ export default function Footer() {
       */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 px-4 sm:px-6 lg:px-12">
         <p className="font-['DM_Sans'] text-white/20 text-xs tracking-wide text-center sm:text-left">
-          © {new Date().getFullYear()} Crown Ink Tattoo Studio. All rights
+          © {new Date().getFullYear()} Crown Ink Tattooz Studio. All rights
           reserved.
         </p>
         {/*

@@ -64,9 +64,12 @@ export default function Gallery() {
 
   return (
     // CHANGED: px-4 sm:px-6 lg:px-12 — consistent section padding
-    <section id="gallery" ref={ref} className="bg-[#141414] py-24 px-4 sm:px-6 lg:px-12">
+    <section
+      id="gallery"
+      ref={ref}
+      className="bg-[#141414] py-24 px-4 sm:px-6 lg:px-12"
+    >
       <div className="max-w-7xl mx-auto">
-
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <div>
@@ -96,14 +99,17 @@ export default function Gallery() {
           </div>
 
           <motion.a
-            href="#contact"
+            href="/gallery"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.4 }}
             className="hidden lg:inline-flex items-center gap-2 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase text-white/40 hover:text-white transition-colors duration-300 font-semibold group"
           >
             View All Work
-            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            <ArrowUpRight
+              size={14}
+              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+            />
           </motion.a>
         </div>
 
@@ -119,7 +125,11 @@ export default function Gallery() {
               key={item.id}
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.08 * i, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                delay: 0.08 * i,
+                duration: 0.65,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               // CHANGED: item.span now uses sm: prefix for col-span-2 (see galleryItems above)
               // row-span-2 still applies at all sizes since tall cards work in single col too
               className={`relative group overflow-hidden cursor-pointer bg-[#1e1e1e] ${item.span}`}
@@ -136,9 +146,7 @@ export default function Gallery() {
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
               {/* Style tag */}
-              <div className="absolute top-4 left-4 z-10">
-             
-              </div>
+              <div className="absolute top-4 left-4 z-10"></div>
 
               {/* Arrow on hover */}
               <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

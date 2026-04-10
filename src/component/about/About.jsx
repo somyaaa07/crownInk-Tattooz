@@ -32,7 +32,7 @@ export default function AboutPage() {
           {/* Heading */}
 
           {/* Grid */}
-          <div className="mt-24">
+          <div className="mt-1 sm:mt-24">
             {/* Label row */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -490,7 +490,7 @@ export default function AboutPage() {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="px-8 py-3 bg-transparent border border-white text-white rounded"
+                  className="px-8 py-3 bg-transparent border cursor-pointer border-white text-white  hover:bg-white hover:text-black "
                 >
                   Contact
                 </motion.button>

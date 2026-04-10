@@ -54,8 +54,8 @@ export default function HeroSection() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="flex items-center gap-3 mb-8"
         >
-          <div className="h-px w-8 bg-white/30 mt-18" />
-          <span className="font-['DM_Sans'] mt-18 text-white/40 text-[9px] sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-semibold">
+          <div className="h-px w-8 bg-white/30 mt-14 sm:mt-24" />
+          <span className="font-['DM_Sans'] mt-14 sm:mt-24 text-white/40 text-[9px] sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-semibold">
             crowninkwell Studio · Greater Noida
           </span>
         </motion.div>

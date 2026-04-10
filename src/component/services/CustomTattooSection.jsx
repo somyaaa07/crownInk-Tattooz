@@ -28,12 +28,12 @@ export default function CustomTattooSection() {
           ref={ref}
         >
           <p className="font-['DM_Sans'] text-white/50 text-md lg:text-md leading-relaxed mb-8">
-            No two people are the same — and neither are our tattoos. Every custom
-            piece starts with a conversation and ends with something that's
-            uniquely, permanently yours.
+            No two people are the same — and neither are our tattoos. Every
+            custom piece starts with a conversation and ends with something
+            that's uniquely, permanently yours.
           </p>
           <Link
-            href="#contact"
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-8 py-4 hover:bg-white transition-colors duration-300"
           >
             Start Your Design <MoveRight size={14} />
@@ -63,7 +63,11 @@ export default function CustomTattooSection() {
             key={step.step}
             initial={{ opacity: 0, y: 28 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.1 * i + 0.2, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              delay: 0.1 * i + 0.2,
+              duration: 0.65,
+              ease: [0.16, 1, 0.3, 1],
+            }}
             className="relative bg-[#1a1a1a] p-6 sm:p-8 border border-white/5 group hover:border-white/15 transition-colors duration-300"
           >
             <span className="absolute top-4 right-6 font-['Bebas_Neue'] text-white/5 text-6xl leading-none select-none">

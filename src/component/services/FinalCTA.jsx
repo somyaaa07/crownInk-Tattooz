@@ -12,7 +12,11 @@ export default function FinalCTA() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="final-cta" ref={ref} className="relative overflow-hidden bg-[#0a0a0a]">
+    <section
+      id="final-cta"
+      ref={ref}
+      className="relative overflow-hidden bg-[#0a0a0a]"
+    >
       <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1600&q=80"
@@ -85,13 +89,13 @@ export default function FinalCTA() {
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           <Link
-            href="#contact"
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-[#1c1c1c] bg-[#f5f5f5] px-8 sm:px-12 py-5 hover:bg-white transition-colors duration-300"
           >
             Book Appointment <MoveRight size={14} />
           </Link>
           <Link
-            href="tel:+919876543210"
+            href="tel:+91-82873 33505"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-bold text-white border border-white/25 px-8 sm:px-12 py-5 hover:border-white/60 hover:bg-white/5 transition-all duration-300"
           >
             Call Us Now
@@ -105,15 +109,17 @@ export default function FinalCTA() {
           className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-12"
         >
           {[
-            { label: "Location", val: "Connaught Place, New Delhi" },
+            { label: "Location", val: "Connaught Place, Greater Noida" },
             { label: "Hours", val: "Tue–Sun · 11am – 8pm" },
-            { label: "Phone", val: "+91 98765 43210" },
+            { label: "Phone", val: "+91-82873 33505" },
           ].map((item) => (
             <div key={item.label} className="text-center">
               <p className="font-['DM_Sans'] text-white/25 text-[9px] tracking-[0.4em] uppercase font-semibold mb-1">
                 {item.label}
               </p>
-              <p className="font-['DM_Sans'] text-white/50 text-sm">{item.val}</p>
+              <p className="font-['DM_Sans'] text-white/50 text-sm">
+                {item.val}
+              </p>
             </div>
           ))}
         </motion.div>

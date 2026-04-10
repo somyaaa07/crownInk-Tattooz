@@ -1,5 +1,42 @@
 // data/galleryData.js
 
+const image31 = "/photos/image31.jpeg";
+const image52 = "/photos/image52.jpeg";
+const image57 = "/photos/image57.jpeg";
+const image66 = "/photos/image66.jpeg";
+const image70 = "/photos/image70.jpeg";
+const image79 = "/photos/image79.jpeg";
+const image3 = "/photos/image3.jpeg";
+const image76 = "/photos/image76.jpeg";
+const image71 = "/photos/image71.jpeg";
+const image35 = "/photos/image35.jpeg";
+const image72 = "/photos/image72.jpeg";
+const image73 = "/photos/image73.jpeg";
+const image60 = "/photos/image60.jpeg";
+const image42 = "/photos/image42.jpeg";
+const image44 = "/photos/image44.jpeg";
+const image46 = "/photos/image46.jpeg";
+const image47 = "/photos/image47.jpeg";
+const image48 = "/photos/image48.jpeg";
+const image50 = "/photos/image50.jpeg";
+const image62 = "/photos/image62.jpeg";
+const image69 = "/photos/image69.jpeg";
+const image2 = "/photos/image2.jpeg";
+const image4 = "/photos/image4.jpeg";
+const image6 = "/photos/image6.jpeg";
+const image10 = "/photos/image10.jpeg";
+const image11 = "/photos/image11.jpeg";
+const image12 = "/photos/image12.jpeg";
+const image16 = "/photos/image16.jpeg";
+const image18 = "/photos/image18.jpeg";
+const image29 = "/photos/image29.jpeg";
+const image30 = "/photos/image30.jpeg";
+const image33 = "/photos/image33.jpeg";
+const image36 = "/photos/image36.jpeg";
+const image40 = "/photos/image40.jpeg";
+const image43 = "/photos/image43.jpeg";
+const image58 = "/photos/image58.jpeg";
+
 export const categories = [
   "All",
   "Blackwork",
@@ -13,7 +50,7 @@ export const categories = [
 export const galleryImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=800&q=80",
+    src: image31,
     alt: "Blackwork sleeve tattoo",
     category: "Blackwork",
     caption: "Full Blackwork Sleeve",
@@ -22,7 +59,7 @@ export const galleryImages = [
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=800&q=80",
+    src: image52,
     alt: "Fine line floral tattoo",
     category: "Fine Line",
     caption: "Fine Line Botanicals",
@@ -31,7 +68,7 @@ export const galleryImages = [
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&q=80",
+    src: image57,
     alt: "Geometric tattoo design",
     category: "Geometric",
     caption: "Sacred Geometry",
@@ -40,7 +77,7 @@ export const galleryImages = [
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1542727365-19732a80dcfd?w=800&q=80",
+    src: image66,
     alt: "Japanese style tattoo",
     category: "Japanese",
     caption: "Traditional Irezumi",
@@ -49,7 +86,7 @@ export const galleryImages = [
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=800&q=80",
+    src: image70,
     alt: "Portrait tattoo realism",
     category: "Portrait",
     caption: "Hyper-Realism Portrait",
@@ -58,7 +95,7 @@ export const galleryImages = [
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1590246814883-57c511e79503?w=800&q=80",
+    src: image79,
     alt: "Tattoo artist working",
     category: "Blackwork",
     caption: "Artist at Work",
@@ -67,7 +104,7 @@ export const galleryImages = [
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1549989476-69a92fa57c36?w=800&q=80",
+    src: image3,
     alt: "Minimalist tattoo design",
     category: "Minimalist",
     caption: "Minimal Geometry",
@@ -76,7 +113,7 @@ export const galleryImages = [
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1562409822-3bb5e5e2dbdc?w=800&q=80",
+    src: image76,
     alt: "Fine line arm tattoo",
     category: "Fine Line",
     caption: "Delicate Linework",
@@ -85,7 +122,7 @@ export const galleryImages = [
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1543137765-49b96880eb59?w=800&q=80",
+    src: image71,
     alt: "Tattoo design sketch",
     category: "Geometric",
     caption: "Custom Geometric Piece",
@@ -94,7 +131,7 @@ export const galleryImages = [
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=80",
+    src: image60,
     alt: "Studio portrait of tattoo artist",
     category: "Portrait",
     caption: "Studio Session",
@@ -103,7 +140,7 @@ export const galleryImages = [
   },
   {
     id: 11,
-    src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
+    src: image35,
     alt: "Blackwork chest tattoo",
     category: "Blackwork",
     caption: "Chest Piece Blackwork",
@@ -112,7 +149,7 @@ export const galleryImages = [
   },
   {
     id: 12,
-    src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
+    src: image72,
     alt: "Japanese back tattoo",
     category: "Japanese",
     caption: "Dragon Back Piece",
@@ -121,7 +158,7 @@ export const galleryImages = [
   },
   {
     id: 13,
-    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80",
+    src: image73,
     alt: "Minimalist wrist tattoo",
     category: "Minimalist",
     caption: "Wrist Script",
@@ -130,7 +167,7 @@ export const galleryImages = [
   },
   {
     id: 14,
-    src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80",
+    src: image42,
     alt: "Fine line portrait",
     category: "Fine Line",
     caption: "Fine Line Portrait",
@@ -139,7 +176,7 @@ export const galleryImages = [
   },
   {
     id: 15,
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    src: image44,
     alt: "Geometric arm tattoo",
     category: "Geometric",
     caption: "Mandala Geometry",
@@ -148,7 +185,7 @@ export const galleryImages = [
   },
   {
     id: 16,
-    src: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80",
+    src: image46,
     alt: "Blackwork ornamental",
     category: "Blackwork",
     caption: "Ornamental Blackwork",
@@ -157,7 +194,7 @@ export const galleryImages = [
   },
   {
     id: 17,
-    src: "https://images.unsplash.com/photo-1500048993953-d23a436266cf?w=800&q=80",
+    src: image47,
     alt: "Japanese koi tattoo",
     category: "Japanese",
     caption: "Koi & Waves",
@@ -166,7 +203,169 @@ export const galleryImages = [
   },
   {
     id: 18,
-    src: "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=800&q=80",
+    src: image48,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 19,
+    src: image50,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 20,
+    src: image62,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 21,
+    src: image69,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 22,
+    src: image2,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 23,
+    src: image4,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 24,
+    src: image6,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 25,
+    src: image10,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 26,
+    src: image11,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 27,
+    src: image16,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 28,
+    src: image12,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 29,
+    src: image18,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 30,
+    src: image58,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 31,
+    src: image29,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 32,
+    src: image30,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 33,
+    src: image33,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 34,
+    src: image36,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 35,
+    src: image40,
+    alt: "Minimalist line tattoo",
+    category: "Minimalist",
+    caption: "Single Needle Minimal",
+    artist: "Priya Nair",
+    height: "short",
+  },
+  {
+    id: 36,
+    src: image43,
     alt: "Minimalist line tattoo",
     category: "Minimalist",
     caption: "Single Needle Minimal",

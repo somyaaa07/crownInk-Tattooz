@@ -131,7 +131,7 @@ export default function Footer() {
       */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 px-4 sm:px-6 lg:px-12">
         <p className="font-['DM_Sans'] text-white/20 text-xs tracking-wide text-center sm:text-left">
-          © {new Date().getFullYear()} Crown Ink Tattoo Studio. All rights
+          © {new Date().getFullYear()} Crown Ink Tattooz Studio. All rights
           reserved.
         </p>
         {/*

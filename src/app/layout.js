@@ -17,9 +17,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata = {
-  title: "Inkwell Tattoo Studio | Premium Tattoo Art — New Delhi",
+  title: "Crown Ink Tattooz Studio | Premium Tattoo Art — Greater Noida",
   description:
-    "Inkwell is a premium tattoo studio in New Delhi specialising in custom blackwork, fine line, Japanese, and geometric tattoo art.",
+    "CrownInk Tattooz is a premium tattoo studio in Greater Noida specialising in custom blackwork, fine line, Japanese, and geometric tattoo art.",
 };
 
 export default function RootLayout({ children }) {

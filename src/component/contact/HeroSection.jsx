@@ -20,14 +20,14 @@ export default function HeroSection() {
           unoptimized
         />
         <Image
-          src="/phone-banner/36.png"
+          src="/banner2/42.png"
           alt="Mobile"
           fill
           className="block md:hidden object-cover object-center"
         />
 
         <Image
-          src="/tablet-banner/22.png"
+          src="/banner2/31.png"
           alt="Tablet"
           fill
           className="hidden md:block lg:hidden object-cover object-center "

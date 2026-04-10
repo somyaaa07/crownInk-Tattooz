@@ -47,7 +47,7 @@ export default function CustomTattooSection() {
           className="relative h-64 sm:h-80 lg:h-96 overflow-hidden"
         >
           <Image
-            src="https://images.unsplash.com/photo-1543137765-49b96880eb59?w=800&q=80"
+            src="/photos/image76.jpeg"
             alt="Tattoo artist drawing custom design"
             fill
             className="object-cover"

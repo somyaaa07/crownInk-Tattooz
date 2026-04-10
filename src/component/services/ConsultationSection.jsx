@@ -67,7 +67,7 @@ export default function ConsultationSection() {
           className="relative h-72 sm:h-80 lg:h-[460px] overflow-hidden"
         >
           <Image
-            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=80"
+            src="/photos/image71.jpeg"
             alt="Tattoo consultation"
             fill
             className="object-cover object-top"

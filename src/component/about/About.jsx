@@ -57,7 +57,7 @@ export default function AboutPage() {
               >
                 <div className="relative w-full h-[400px] aspect-[3/4] rounded-xl overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1627458514257-41d0ea46e326"
+                    src="/photos/image47.jpeg"
                     alt="Tattoo artist"
                     fill
                     className="object-cover  grayscale hover:scale-105 transition duration-700"

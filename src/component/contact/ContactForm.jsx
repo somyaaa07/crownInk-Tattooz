@@ -22,7 +22,7 @@ const inputBase =
   "input-field w-full bg-studio-card border border-studio-border  px-4 py-3.5 text-studio-text font-body text-sm placeholder-studio-muted focus:border-white/30 focus:ring-0 transition-all duration-250";
 
 const selectBase =
-  "input-field w-full bg-studio-card border border-studio-border  px-4 py-3.5 text-studio-text font-body text-sm focus:border-white/30 focus:ring-0 transition-all duration-250 cursor-pointer appearance-none";
+  "input-field w-full bg-studio-card border border-studio-border  px-4 py-3.5 text-studio-text font-body text-sm focus:border-white/30 focus:ring-0 transition-all duration-250 cursor-pointer bg-[#1c1c1c]  appearance-none";
 
 export default function ContactForm() {
   const [fileName, setFileName] = useState(null);
@@ -161,7 +161,7 @@ export default function ContactForm() {
           {/* Placement dropdown */}
           <div className="relative">
             <FieldLabel htmlFor="placement">Placement *</FieldLabel>
-            <select id="placement" required className={selectBase}>
+            <select id="placement" required className={selectBase} >
               <option value="">Select placement</option>
               <option>Forearm</option>
               <option>Upper Arm / Bicep</option>

@@ -1,5 +1,6 @@
 import { Jost, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import FloatingSocialButtons from "../component/FloatingSocialButtons";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -25,7 +26,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${jost.variable} ${cormorant.variable}`}>
-      <body className="bg-[#1c1c1c] text-[#f5f5f5] antialiased">{children}</body>
+      <body className="bg-[#1c1c1c] text-[#f5f5f5] antialiased">{children}
+          <FloatingSocialButtons />
+      </body>
     </html>
   );
 }

@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-[#0a0a0a]">
+    <section className=" relative min-h-screen flex flex-col justify-center lg:justify-end overflow-hidden bg-[#0a0a0a]">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -44,7 +44,7 @@ export default function HeroSection() {
       />
 
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-2 lg:px-12 md:px-6  py-10 sm:py-12  w-full">
+      <div className="hero relative z-10 max-w-7xl mx-auto px-4 sm:px-2 lg:px-12 md:px-6  py-10 sm:py-12  w-full ">
         {/* Label */}
         <motion.div
           initial={{ opacity: 0, x: -16 }}
@@ -52,8 +52,8 @@ export default function HeroSection() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="flex items-center gap-3 mb-4 sm:mb-5"
         >
-          <div className="h-px w-8 bg-white/30 mt-14 sm:mt-24" />
-          <span className="font-['DM_Sans'] mt-14 sm:mt-24 text-white/40 text-[9px] sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-semibold ">
+          <div className="h-px w-8 bg-white/30 mt-18 sm:mt-30 lg:mt-20 xl:mt-25 md:mt-25" />
+          <span className="font-['DM_Sans']   text-white/40 text-[9px] mt-18 sm:mt-30 lg:mt-20 xl:mt-25 md:mt-25 sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-semibold ">
             crowninkwell Studio · Greater Noida
           </span>
         </motion.div>

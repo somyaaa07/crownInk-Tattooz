@@ -52,14 +52,12 @@ export default function Hero() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        // CHANGED: px-4 sm:px-6 lg:px-12 — tighter padding on small screens
         className="relative z-10 flex items-center justify-between px-4 sm:px-6 lg:px-12 pt-8"
       ></motion.div>
 
-      {/* Main content */}
-      {/* CHANGED: px-4 sm:px-6 lg:px-12 pb-10 sm:pb-16 — safer padding on mobile */}
-      <div className="relative z-10 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-16 w-full mt-20 sm:mt-30">
-        {/* CHANGED: max-w-full sm:max-w-xl lg:max-w-3xl — text block uses full width on mobile */}
+      {/* Main content — ONLY CHANGE: justify-center lg:justify-end, removed mt-20 sm:mt-30 */}
+      <div className="relative z-10 flex-1 flex flex-col justify-center lg:justify-end max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-16 w-full">
+        {/* max-w-full sm:max-w-xl lg:max-w-3xl */}
         <div className="max-w-full sm:max-w-xl lg:max-w-3xl">
           {/* Label */}
           <motion.div
@@ -68,14 +66,13 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="flex items-center gap-3 mb-6"
           >
-            <div className="h-px w-8 bg-white/40" />
-            {/* CHANGED: text-[9px] sm:text-[11px] — slightly smaller label on mobile */}
-            <span className="font-['DM_Sans'] text-white/40 text-[9px] sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-medium">
+            <div className="h-px w-8 bg-white/40 mt-18 sm:mt-30 lg:mt-20 xl:mt-25 md:mt-25" />
+            <span className="font-['DM_Sans'] mt-18 sm:mt-30 lg:mt-20 xl:mt-25 md:mt-25 text-white/40 text-[9px] sm:text-[11px] tracking-[0.2em] md:tracking-[0.5em] uppercase font-medium">
               Premium Tattoo Studio · Greater Noida
             </span>
           </motion.div>
 
-          {/* Heading — vw-based sizing already scales naturally, no change needed */}
+          {/* Heading */}
           <div className="overflow-hidden mb-2">
             <motion.h1
               initial={{ y: "110%" }}
@@ -111,7 +108,6 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0, duration: 0.7 }}
-            // CHANGED: max-w-full sm:max-w-sm — no artificial cap on mobile
             className="font-['DM_Sans'] text-white/50 text-sm leading-relaxed max-w-full sm:max-w-sm mb-10 tracking-wide"
           >
             Custom tattoo artistry crafted for permanence. Each piece is
@@ -123,10 +119,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.7 }}
-            // CHANGED: gap-3 sm:gap-4 — tighter gap on mobile
             className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
-            {/* CHANGED: w-full sm:w-auto px-6 sm:px-10 — full-width buttons on mobile */}
             <Link
               href="/gallery"
               className="inline-flex items-center justify-center gap-3 font-['DM_Sans'] text-[11px] tracking-[0.3em] uppercase font-semibold text-[#0f0f0f] bg-white w-full sm:w-auto px-6 sm:px-10 py-4 hover:bg-white/85 transition-colors duration-300"

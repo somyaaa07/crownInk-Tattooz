@@ -27,7 +27,7 @@ const footerLinks = {
 };
 
 const socials = [
-  { icon: FaInstagram, label: "Instagram", to: "#" },
+  { icon: FaInstagram, label: "Instagram", to: "https://www.instagram.com/crowninktattoos/" },
   { icon: CiFacebook, label: "Facebook", to: "#" },
   { icon: CiYoutube, label: "YouTube", to: "#" },
 ];
